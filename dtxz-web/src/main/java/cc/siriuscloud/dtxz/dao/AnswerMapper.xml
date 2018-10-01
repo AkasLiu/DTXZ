@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.AnswerMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.Answer" >
+    <id column="answer_id" property="answerId" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="praise_count" property="praiseCount" jdbcType="INTEGER" />
+    <result column="pub_time" property="pubTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="prob_id" property="probId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    answer_id, title, content, praise_count, pub_time, status, user_id, prob_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dtxz_answer
+    where answer_id = #{answerId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_answer
+    where answer_id = #{answerId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.Answer" >
+    insert into dtxz_answer (answer_id, title, content, 
+      praise_count, pub_time, status, 
+      user_id, prob_id)
+    values (#{answerId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{praiseCount,jdbcType=INTEGER}, #{pubTime,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=VARCHAR}, #{probId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.Answer" >
+    insert into dtxz_answer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="answerId != null" >
+        answer_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="praiseCount != null" >
+        praise_count,
+      </if>
+      <if test="pubTime != null" >
+        pub_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="probId != null" >
+        prob_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="answerId != null" >
+        #{answerId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="praiseCount != null" >
+        #{praiseCount,jdbcType=INTEGER},
+      </if>
+      <if test="pubTime != null" >
+        #{pubTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="probId != null" >
+        #{probId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.Answer" >
+    update dtxz_answer
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="praiseCount != null" >
+        praise_count = #{praiseCount,jdbcType=INTEGER},
+      </if>
+      <if test="pubTime != null" >
+        pub_time = #{pubTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="probId != null" >
+        prob_id = #{probId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where answer_id = #{answerId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.Answer" >
+    update dtxz_answer
+    set title = #{title,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      praise_count = #{praiseCount,jdbcType=INTEGER},
+      pub_time = #{pubTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      prob_id = #{probId,jdbcType=VARCHAR}
+    where answer_id = #{answerId,jdbcType=VARCHAR}
+  </update>
+  
+  
+   <insert id="insertAnswerByUUID" parameterType="Answer">
+		insert into dtxz_answer(answer_id, content, pub_time, user_id,prob_id)
+		 values(replace(uuid(),'-',''),#{content},#{pubTime},#{userId},#{probId});
+	</insert>
+	
+	<select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+	  	select 
+	  	<include refid="Base_Column_List"></include>
+	  	from dtxz_answer
+	  	where prob_id = #{porbId} order by status desc,pub_time desc
+    </select>
+	
+	<select id="selectAnswerCountByProbId" resultType="java.lang.Long" parameterType="java.lang.String">
+	  	select count(0)
+	  	from dtxz_answer
+	  	where prob_id = #{porbId}
+    </select>
+    
+    
+    <select id="countAnswerByUserId" resultType="java.lang.Long" parameterType="java.lang.String">
+			select count(0) from dtxz_answer 
+				where user_id=#{userId};
+
+    </select>
+    
+    
+    
+    <select id="countPraiseByUserId" resultType="java.lang.Long" parameterType="java.lang.String">
+    	select sum(praise_count) from dtxz_answer
+    		 where user_id=#{userId}
+
+    	
+    </select>
+    
+  
+</mapper>

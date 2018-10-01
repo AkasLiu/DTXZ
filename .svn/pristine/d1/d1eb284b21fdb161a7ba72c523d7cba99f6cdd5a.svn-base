@@ -1,0 +1,33 @@
+package cc.siriuscloud.dtxz.service.impl;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import cc.siriuscloud.dtxz.bean.User;
+import cc.siriuscloud.dtxz.dao.UserMapper;
+import cc.siriuscloud.dtxz.service.UserService;
+
+
+@Service
+public class UserServiceImpl implements UserService{
+
+	
+	@Resource
+	UserMapper userDao;
+	
+	
+	@Override
+	public User login(User user) {
+		
+		return userDao.selectByEmailPwd(user);
+	}
+
+
+	@Override
+	public int register(User user) {
+	
+		return userDao.insertByUUID(user);
+	}
+
+}

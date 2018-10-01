@@ -1,0 +1,88 @@
+package cc.siriuscloud.dtxz.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+
+/**
+ * @author beanSeedling
+ * 考试页面的入口 包括 创建考试 考场页面 当前考试 历史考试 我的考试记录
+ * 
+ */
+@Controller
+@RequestMapping("exam")
+public class ExamController {
+	
+	/**
+	 * 创建考卷的视图
+	 * @return
+	 */
+	@RequestMapping("createroom") 
+	public String createroom(){
+		return "exam_createroom";
+	}
+	
+	/**
+	 * 进入考场前的验证身份
+	 * @return
+	 */
+	@RequestMapping("doing") 
+	public String doing(){
+		return "redirect:doingUI.do";
+	}
+	
+	/**
+	 * 考场的视图
+	 * @return
+	 */
+	@RequestMapping("doingUI") 
+	public String doingUI(){
+		return "exam_doingUI";
+	}
+	
+	/**
+	 * 当前考试的视图
+	 * @return
+	 */
+	@RequestMapping("curexam") 
+	public String curexam(){
+		return "exam_curexam";
+	}
+	
+	/**
+	 * 历史考试的视图
+	 * @return
+	 */
+	@RequestMapping("historyexam") 
+	public String historyexam(){
+		return "exam_historyexam";
+	}
+	
+	/**
+	 * 我的考试记录的视图
+	 * @return
+	 */
+	@RequestMapping("myexam") 
+	public String myexam(){
+		return "exam_myexam";
+	}
+	
+	/**
+	 * 错题集的视图
+	 * @return
+	 */
+	@RequestMapping("errorunion") 
+	public String errorunion(){
+		return "exam_errorunion";
+	}
+	
+	/**
+	 * 错题的视图
+	 * @return
+	 */
+	@RequestMapping("errortitle") 
+	public String errortitle(){
+		return "exam_errortitle";
+	}
+}

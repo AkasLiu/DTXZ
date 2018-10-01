@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+
+
+.btn {
+    text-align: center;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    border-radius: 4px;
+    text-align: center;
+    font:14px/28px "Microsoft YaHei";
+    vertical-align: middle;
+    border: 1px solid rgb(204, 204, 204);
+    color: #fff;
+}
+
+
+a.btn{
+    display: inline-block;
+    text-decoration: none;
+    font:14px/28px "Microsoft YaHei";
+    width:58px;
+    height:28px;
+}
+a.btn:hover{
+    color: #fff ;
+}
+
+/*详情按钮*/
+.btn-success{
+
+    border-color: #4cae4c;
+    background-color: #5cb85c;
+
+}
+
+.btn-success:hover{
+    border-color: rgb(57, 132, 57);
+    background-color: rgb(68, 157, 68);
+}
+
+
+
+.btn-info{
+    border-color: rgb(70, 184, 218);
+    background-color: rgb(91, 192, 222);
+
+}
+
+.btn-info:hover{
+    border-color: rgb(38, 154, 188);
+    background-color: rgb(49, 176, 213);
+}
+
+.btn-warning{
+    border-color: rgb(238, 162, 54);
+    background-color: rgb(240, 173, 78);
+
+}
+.btn-warning:hover{
+    border-color: rgb(213, 133, 18);
+    background-color: rgb(236, 151, 31);
+
+}
+
+.btn-danger{
+    border-color: rgb(212, 63, 58);
+    background-color: rgb(217, 83, 79);
+
+}
+.btn-danger:hover{
+    border-color: rgb(172, 41, 37);
+    background-color: rgb(201, 48, 44);
+
+}
+
+
+
+.btn-default{
+    color: rgb(51, 51, 51);
+    background-color: #fff;
+}
+
+.btn-default:hover{
+    border-color: rgb(173, 173, 173);
+    background-color: rgb(230, 230, 230);
+}
+
+
+.btn-primary{
+    background-color: rgb(51, 122, 183);
+    color: #fff;
+}
+
+.btn-primary:hover{
+    background-color: rgb(40, 96, 144);
+
+}
+
+

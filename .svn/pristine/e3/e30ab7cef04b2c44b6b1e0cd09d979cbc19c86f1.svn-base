@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>提问</title>
+		<!--链入基本初始化-->
+		<link rel="stylesheet" href="style/base.css">
+		
+		<!--链入前台公共样式-->
+		<link rel="stylesheet" href="style/common.css">
+		
+		<!--提问中的样式 -->
+		<link rel="stylesheet" href="style/quiz.css">
+		
+		<!--<link rel="stylesheet" href="style/button.css" />
+		-->
+	</head>
+	<body>
+		<!--    头部  -->
+		<div class="header">
+			<div class="container">
+	
+				<h3 class="logo fl">
+					<a href="#">
+						<!--<img src="images/logo.png" alt="...">-->
+						<span>大题小作</span>
+					</a>
+	
+				</h3>
+	
+				<ul class="nav-list">
+					<li><a href="#">首页</a></li>
+					<li class="active"><a href="#">解题</a></li>
+					<li><a href="#">题库</a></li>
+					<li><a href="#">发现</a></li>
+				</ul>
+	
+				<div class="head-box fr">
+					<div class="headimg">
+						<img src="uploads/sirius.png" alt="...">
+					</div>
+					<ul>
+						<li><a class="personal-tip" href="#">个人中心</a></li>
+						<li><a class="inmail-tip" href="#">查看信息</a></li>
+						<li><a class="unsign-tip" href="#">退出登录</a></li>
+					</ul>
+	
+				</div>
+	
+			</div>
+		</div>
+		
+		<!--主体-->
+		<div class="container">
+			<div class="breadcrumb">
+				<a href="#">解题</a>
+				<span> > </span>
+				<span>发起提问</span>
+			</div>
+			<div class="ques_title">
+				<label> 请将您的问题告诉我们  :</label>
+				<input id="title" name="title" placeholder="请在这里概述您的问题" value="" type="text">
+			</div>
+			<div class="ques_content">
+				
+			</div>
+			<div class="last">
+				<select name ="price">
+					<option value="0">0</option>
+					<option selected="" value="5">5</option>
+					<option value="10">10</option>
+					<option value="20">20</option>
+					<option value="30">30</option>
+					<option value="50">50</option>
+					<option value="80">80</option>
+					<option value="100">100</option>
+				</select>
+				
+				<span>金币</span>
+			
+				<button class="btn" type="submit">发布问题</button>
+			</div>
+			
+			
+		</div>
+		
+		
+	</body>
+</html>

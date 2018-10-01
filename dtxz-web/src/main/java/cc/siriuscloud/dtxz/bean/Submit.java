@@ -1,0 +1,43 @@
+package cc.siriuscloud.dtxz.bean;
+
+public class Submit {
+    protected String submitId;
+
+    protected String exerciseId;
+
+    protected String examineeId;
+
+    protected String answer;
+
+    public String getSubmitId() {
+        return submitId;
+    }
+
+    public void setSubmitId(String submitId) {
+        this.submitId = submitId == null ? null : submitId.trim();
+    }
+
+    public String getExerciseId() {
+        return exerciseId;
+    }
+
+    public void setExerciseId(String exerciseId) {
+        this.exerciseId = exerciseId == null ? null : exerciseId.trim();
+    }
+
+    public String getExamineeId() {
+        return examineeId;
+    }
+
+    public void setExamineeId(String examineeId) {
+        this.examineeId = examineeId == null ? null : examineeId.trim();
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer == null ? null : answer.trim();
+    }
+}

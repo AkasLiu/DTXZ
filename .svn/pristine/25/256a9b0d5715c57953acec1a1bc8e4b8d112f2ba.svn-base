@@ -1,0 +1,116 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background-color: #EEEEEE;
+}
+
+a{
+	text-decoration: none;
+}
+
+.box{
+	width:680px;
+	margin: 100px auto;
+	padding: 20px 20px;
+	background-color: white;
+	box-shadow: 0 0 1px 1px #999;
+	border-radius: 5px;
+}
+
+.box>ul{
+	list-style: none;
+	padding: 20px 50px;
+	padding-bottom: 0;
+	overflow: hidden;
+}
+
+.box>ul li{
+	float: left;
+	width: 100px;
+	height: 80px;
+	line-height: 80px;
+	margin: 0 43px;
+	background: white;
+	overflow: hidden;
+}	
+
+.box>ul li>a{
+	display: block;
+	width: 80px;
+	height: 60px;
+	line-height: 60px;
+	margin-top: 5px;
+	text-align: center;
+	padding: 5px 5px;
+	/*box-shadow: 0px 0px 1px 1px #999;*/
+	/*border: 1px solid #999;*/
+	border-radius: 10px;
+}
+
+.box>ul li>a>img{
+	width: 50px;
+	height: 50px;
+	margin-left: 5px;
+}
+
+.box>ul li.active{
+	height:80px;
+	border: none;
+	border: 1px solid #999;
+	border-bottom: 1px solid white;
+	box-shadow: 0 0 1px 1px #999;
+	border-radius: 3px;
+}
+
+.box>ul li.active>a{
+	border: none;
+	box-shadow: none;
+}
+
+.divContain{
+	width: 654px;	
+	margin: 0 13px;	
+	margin-top: -1px;
+	border: 1px solid #999;		
+	display: none;
+}
+
+.show{
+	display: block;
+	box-shadow: 0 0 1px 1px #999;
+	border-radius: 5px;
+}
+
+.contain{
+	margin: 20px 20px;
+}
+
+.contain .title{
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.contain>p>button{
+	width: 100px;
+	height: 50px;
+	margin: 20px 20px;
+	font-size: 16px;
+	font-weight: 600;
+	background-color: white;
+	border: 1px solid #999;
+	cursor: pointer;
+}
+
+.contain>p.QRcode{
+	display: none;				
+	overflow: hidden;
+}
+
+.contain>p.QRcode>img{
+	width: 200px;
+	height:200px;
+	margin: 20px 200px;
+}

@@ -1,0 +1,416 @@
+/************************** 通用设置 *****************/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear{
+	clear: both;
+}
+
+/* 通用辅助类 */
+
+/* 页面路径 */
+.crumbs-path {
+	color: #666;
+	font-size: 14px;
+	margin: 13px 0;
+}
+
+.crumbs-path a {
+	color: #666;
+}
+
+.crumbs-path a:hover {
+	color: #25bb9b;
+}
+
+/* 带红点标题 */
+.red-pot-title {
+	font-size: 18px;
+	height: 24px;
+	line-height: 24px;
+}
+
+
+.red-pot-title::before {
+	display: inline-block;
+	content: '';
+	width: 7px;
+	height: 7px;
+	margin: 5px;
+	/*vertical-align: center;*/
+	background: #FF6547;
+}
+
+.red-pot-title a {
+	/*float: left;*/
+	color: #25bb9b;
+}
+
+/******************* 容器类 ******************/
+.adv-box {
+	width: 100%;
+	height: 200px;
+	/*visibility: visible;*/
+	text-align: center;
+	background-color: #f7d840;
+}
+
+.big-container {
+	margin: 0 auto;
+	width: 1005px;
+}
+
+.cur-exam-box {
+	
+}
+
+.normal-box {
+	padding: 15px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #333;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* 左右边的大小不同 */
+.left-content .normal-box {
+	width: 690px;
+}
+.right-content .normal-box {
+	width: 242px;
+}
+
+.normal-box .normal-content {
+	padding: 10px 40px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.normal-box table {
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	border: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
+.normal-box table th, td {
+	padding: 14px 20px;
+	letter-spacing: 1px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.normal-box table th {
+	color: #888;
+	background-color: #EDEDED;
+}
+
+.normal-box table td {
+	max-width: 300px;
+	color: #666;
+	border-bottom: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 元素类 */
+
+/************* 广告 ****************/
+.adv-box img {
+	width: 960px;
+	height: 200px;
+}
+
+
+/* 分页（申根） */
+.pagination-ul {
+	list-style: none;
+	overflow: hidden;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.pagination-ul li{
+	display: inline-block;
+	height: 32px;
+	margin-right: 5px;
+}
+
+.pagination-ul li:hover {
+	background-color: #00bc9b;
+}
+
+.pagination-ul li:hover > a {
+	color: white;
+}
+
+.pagination-ul li.first-page{
+	width: 44px;
+}
+
+.pagination-ul li.last-page{
+	width: 44px;
+}
+
+.pagination-ul li.prev-page{
+	width: 56px;
+}
+
+.pagination-ul li.next-page{
+	width: 56px;
+}
+
+.pagination-ul li.page-number{
+	width: 32px;
+}
+
+
+.pagination-ul li>a{
+	display: block;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border: 1px solid #e1e1e1;
+	color: #999;
+}
+
+.pagination-ul .active{
+	background-color: #00bc9b;
+	border-color: #00bc9b;
+	/*box-sizing: border-box;*/
+}
+
+/* 页禁点击类 */
+.pagination-ul .disabled a:hover {
+	border-color:#e3e3e3;
+ 	background:#e3e3e3;
+ 	color:#FFF;
+ 	cursor:not-allowed;
+}
+
+.pagination-ul .active>a>p{
+	color: #FFF;
+}
+
+
+/* 课程列表 */
+/*.interest-course-imglist {
+
+}*/
+
+.interest-course-imglist li{
+	position: relative;
+	display: inline-block;
+	margin: 10px 5px 10px 0;
+	width: 220px;
+	height: 204px;
+	/* 超出隐藏并且省略号 */
+	text-overflow: ellipsis;
+	overflow: hidden;
+	text-align: center;
+	border: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
+.interest-course-imglist li img {
+	display: block;
+	width: 220px;
+	height: 144px;
+}
+
+.interest-course-imglist li span {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 60px;
+	/* 设置强制一行 */
+	white-space: nowrap;
+}
+
+.interest-course-imglist li .course-details {
+	/*display: inline-block;*/
+	position: absolute;
+	bottom: -60px;
+	width: 190px;
+	height: 30px;
+	padding: 10px 15px;
+	text-align: center;
+	font-size: 14px;
+	background: #fff;
+	/* 强制一行 */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	/* 定义动画的快慢 */
+	transition: 0.5s ease-in;
+}
+
+.interest-course-imglist li:hover  .course-details {
+	transform: translateY(-60px);
+}
+
+
+/***************** 边栏 ***************************/
+.weather-box {
+	padding: 5px 5px 5px 25px;
+	/*padding-left: 20px;*/
+	margin-bottom: -5px;
+}
+
+
+.weather-box img {
+    float: left;
+	margin-right: 10px;
+}
+
+
+.person-info>.photo-box {
+	height: 76px;
+	padding: 5px;
+}
+
+.person-info > .photo-box > .radius-box {
+	margin: 0 auto;
+	width: 64px;
+	height: 64px;
+	border: 0.1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 35px;
+}
+
+.person-info > .photo-box > .radius-box > img {
+	display: block;
+	margin: 0 auto;
+	padding: 2px;
+	width: 60px;
+	height: 60px;
+}
+
+.person-info > .user-name {
+	padding: 0 50px 5px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	/* 超出省略 */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	/* 下边虚线 */
+	border-bottom: 1px dashed #e2e2e2;
+}
+
+/* 详情信息 */
+.person-info > .person-details {
+	height: 50px;
+	/*vertical-align: center;*/
+	line-height: 50px;
+	font-size: 14px;
+	color: #666;
+	border-bottom: 1px dashed #e2e2e2;
+}
+
+/* 设置图标 */
+.person-info > .person-details{
+	margin: 0 10px;
+	padding-left: 35px;
+	
+	background: url('../images/person-info-tip.png') no-repeat center 24px;
+	background-size: 20px;
+}
+
+.person-info > .challenge-num-icon {
+	background-position: 0 18px;
+}
+
+.person-info > .right-num-icon {
+	background-position: 0 -55px;
+}
+
+.person-info > .exam-num-icon {
+	background-position: 0 -17px;
+}
+
+.person-info > .pass-box {
+	padding: 30px 10px;
+	margin-left: 160px;
+	margin-bottom: -10px;
+	width: 87px;
+	height: 47px;
+	/*line-height: ;*/
+	font-size: 14px;
+	color: #db2231;
+	text-align: center;
+	vertical-align: center;
+	background: url('../images/pass-tip.png') no-repeat center center;
+	/*background-size: */
+}
+
+.popular-adv {
+	position: relative;
+	/*padding-left:10px;*/
+	width: 252px !important;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.popular-adv i {
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 7px;
+	margin-right: 5px;
+	width: 12px;
+	height: 12px;
+	background: url('../images/next-pre-tip.png') no-repeat;
+	background-size: 24px;
+}
+
+.popular-adv i.carousel-next-icon {
+}
+
+
+.popular-adv i.carousel-next-icon:hover {
+	background-position: -12px -12px;
+	background-size: 24px;
+}
+
+.popular-adv i.carousel-last-icon {
+	background-position: 0 -12px;
+}
+
+
+.popular-adv i.carousel-last-icon:hover {
+	background-position: -12px 0;
+	background-size: 24px;
+}
+
+.popular-adv > .popular-adv-box {
+	position: relative;
+	margin: 0 auto;
+	width: 242px;
+	height: 300px;
+	margin-top: 20px;
+	margin-bottom: -5px;
+	overflow: hidden;
+	/*margin: 20px 10px 10px;*/
+	/*padding: 20px 10px 10px;*/
+}
+
+.popular-adv > .popular-adv-box a {
+	/*position: absolute;*/
+	transition: ease-in;
+}
+
+.popular-adv > .popular-adv-box img {
+	width: 100%;
+	height: 92px;
+	margin-bottom: 10px;
+}

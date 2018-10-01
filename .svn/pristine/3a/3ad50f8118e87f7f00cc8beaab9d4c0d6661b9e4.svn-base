@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.SubmitMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.Submit" >
+    <id column="submit_id" property="submitId" jdbcType="VARCHAR" />
+    <result column="exercise_id" property="exerciseId" jdbcType="VARCHAR" />
+    <result column="examinee_id" property="examineeId" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cc.siriuscloud.dtxz.bean.Submit" extends="BaseResultMap" >
+    <result column="answer" property="answer" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    submit_id, exercise_id, examinee_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    answer
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from dtxz_submit
+    where submit_id = #{submitId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_submit
+    where submit_id = #{submitId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.Submit" >
+    insert into dtxz_submit (submit_id, exercise_id, examinee_id, 
+      answer)
+    values (#{submitId,jdbcType=VARCHAR}, #{exerciseId,jdbcType=VARCHAR}, #{examineeId,jdbcType=VARCHAR}, 
+      #{answer,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.Submit" >
+    insert into dtxz_submit
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="submitId != null" >
+        submit_id,
+      </if>
+      <if test="exerciseId != null" >
+        exercise_id,
+      </if>
+      <if test="examineeId != null" >
+        examinee_id,
+      </if>
+      <if test="answer != null" >
+        answer,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="submitId != null" >
+        #{submitId,jdbcType=VARCHAR},
+      </if>
+      <if test="exerciseId != null" >
+        #{exerciseId,jdbcType=VARCHAR},
+      </if>
+      <if test="examineeId != null" >
+        #{examineeId,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null" >
+        #{answer,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.Submit" >
+    update dtxz_submit
+    <set >
+      <if test="exerciseId != null" >
+        exercise_id = #{exerciseId,jdbcType=VARCHAR},
+      </if>
+      <if test="examineeId != null" >
+        examinee_id = #{examineeId,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null" >
+        answer = #{answer,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where submit_id = #{submitId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cc.siriuscloud.dtxz.bean.Submit" >
+    update dtxz_submit
+    set exercise_id = #{exerciseId,jdbcType=VARCHAR},
+      examinee_id = #{examineeId,jdbcType=VARCHAR},
+      answer = #{answer,jdbcType=LONGVARCHAR}
+    where submit_id = #{submitId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.Submit" >
+    update dtxz_submit
+    set exercise_id = #{exerciseId,jdbcType=VARCHAR},
+      examinee_id = #{examineeId,jdbcType=VARCHAR}
+    where submit_id = #{submitId,jdbcType=VARCHAR}
+  </update>
+</mapper>

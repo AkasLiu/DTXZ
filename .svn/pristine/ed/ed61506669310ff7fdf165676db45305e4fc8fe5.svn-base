@@ -1,0 +1,23 @@
+package cc.siriuscloud.dtxz.service;
+
+import cc.siriuscloud.dtxz.bean.User;
+
+public interface UserService {
+
+	
+	/**
+	 * 邮箱密码登录
+	 * @param email
+	 * @param password
+	 * @return
+	 */
+	public User login(User user);
+	
+	
+	/**
+	 * 注册
+	 * @param user
+	 */
+	public int register(User user);
+	
+}

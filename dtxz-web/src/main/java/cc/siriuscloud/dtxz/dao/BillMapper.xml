@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.BillMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.Bill" >
+    <id column="bill_id" property="billId" jdbcType="VARCHAR" />
+    <result column="cost" property="cost" jdbcType="DOUBLE" />
+    <result column="spender_id" property="spenderId" jdbcType="VARCHAR" />
+    <result column="payee_id" property="payeeId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    bill_id, cost, spender_id, payee_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dtxz_bill
+    where bill_id = #{billId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_bill
+    where bill_id = #{billId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.Bill" >
+    insert into dtxz_bill (bill_id, cost, spender_id, 
+      payee_id)
+    values (#{billId,jdbcType=VARCHAR}, #{cost,jdbcType=DOUBLE}, #{spenderId,jdbcType=VARCHAR}, 
+      #{payeeId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.Bill" >
+    insert into dtxz_bill
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="billId != null" >
+        bill_id,
+      </if>
+      <if test="cost != null" >
+        cost,
+      </if>
+      <if test="spenderId != null" >
+        spender_id,
+      </if>
+      <if test="payeeId != null" >
+        payee_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="billId != null" >
+        #{billId,jdbcType=VARCHAR},
+      </if>
+      <if test="cost != null" >
+        #{cost,jdbcType=DOUBLE},
+      </if>
+      <if test="spenderId != null" >
+        #{spenderId,jdbcType=VARCHAR},
+      </if>
+      <if test="payeeId != null" >
+        #{payeeId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.Bill" >
+    update dtxz_bill
+    <set >
+      <if test="cost != null" >
+        cost = #{cost,jdbcType=DOUBLE},
+      </if>
+      <if test="spenderId != null" >
+        spender_id = #{spenderId,jdbcType=VARCHAR},
+      </if>
+      <if test="payeeId != null" >
+        payee_id = #{payeeId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where bill_id = #{billId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.Bill" >
+    update dtxz_bill
+    set cost = #{cost,jdbcType=DOUBLE},
+      spender_id = #{spenderId,jdbcType=VARCHAR},
+      payee_id = #{payeeId,jdbcType=VARCHAR}
+    where bill_id = #{billId,jdbcType=VARCHAR}
+  </update>
+</mapper>

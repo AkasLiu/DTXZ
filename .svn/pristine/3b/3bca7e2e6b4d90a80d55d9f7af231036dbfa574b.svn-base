@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.ExamMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.Exam" >
+    <id column="exam_id" property="examId" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="begintime" property="begintime" jdbcType="TIMESTAMP" />
+    <result column="duration" property="duration" jdbcType="TIME" />
+    <result column="clazz_id" property="clazzId" jdbcType="VARCHAR" />
+    <result column="ep_id" property="epId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    exam_id, title, status, createtime, begintime, duration, clazz_id, ep_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dtxz_exam
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_exam
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.Exam" >
+    insert into dtxz_exam (exam_id, title, status, 
+      createtime, begintime, duration, 
+      clazz_id, ep_id)
+    values (#{examId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{begintime,jdbcType=TIMESTAMP}, #{duration,jdbcType=TIME}, 
+      #{clazzId,jdbcType=VARCHAR}, #{epId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.Exam" >
+    insert into dtxz_exam
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="examId != null" >
+        exam_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="begintime != null" >
+        begintime,
+      </if>
+      <if test="duration != null" >
+        duration,
+      </if>
+      <if test="clazzId != null" >
+        clazz_id,
+      </if>
+      <if test="epId != null" >
+        ep_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="examId != null" >
+        #{examId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="begintime != null" >
+        #{begintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="duration != null" >
+        #{duration,jdbcType=TIME},
+      </if>
+      <if test="clazzId != null" >
+        #{clazzId,jdbcType=VARCHAR},
+      </if>
+      <if test="epId != null" >
+        #{epId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.Exam" >
+    update dtxz_exam
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="begintime != null" >
+        begintime = #{begintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="duration != null" >
+        duration = #{duration,jdbcType=TIME},
+      </if>
+      <if test="clazzId != null" >
+        clazz_id = #{clazzId,jdbcType=VARCHAR},
+      </if>
+      <if test="epId != null" >
+        ep_id = #{epId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.Exam" >
+    update dtxz_exam
+    set title = #{title,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      begintime = #{begintime,jdbcType=TIMESTAMP},
+      duration = #{duration,jdbcType=TIME},
+      clazz_id = #{clazzId,jdbcType=VARCHAR},
+      ep_id = #{epId,jdbcType=VARCHAR}
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </update>
+</mapper>

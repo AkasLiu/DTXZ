@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.AuthenMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.Authen" >
+    <id column="authen_id" property="authenId" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="info" property="info" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="img" property="img" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    authen_id, user_id, info, title, img
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dtxz_authen
+    where authen_id = #{authenId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_authen
+    where authen_id = #{authenId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.Authen" >
+    insert into dtxz_authen (authen_id, user_id, info, 
+      title, img)
+    values (#{authenId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{info,jdbcType=VARCHAR}, 
+      #{title,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.Authen" >
+    insert into dtxz_authen
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="authenId != null" >
+        authen_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="info != null" >
+        info,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="img != null" >
+        img,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="authenId != null" >
+        #{authenId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null" >
+        #{info,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null" >
+        #{img,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.Authen" >
+    update dtxz_authen
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null" >
+        info = #{info,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null" >
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where authen_id = #{authenId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.Authen" >
+    update dtxz_authen
+    set user_id = #{userId,jdbcType=VARCHAR},
+      info = #{info,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      img = #{img,jdbcType=VARCHAR}
+    where authen_id = #{authenId,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="selectByUserId" parameterType="java.lang.String" resultMap="BaseResultMap" >
+  	select 
+  	<include refid="Base_Column_List" />
+  	from dtxz_authen where user_id=#{userId}
+  </select>
+  
+  <select id="selectAll" resultMap="BaseResultMap" >
+  	select 
+  	<include refid="Base_Column_List" />
+  	from dtxz_authen
+  </select>
+  
+</mapper>

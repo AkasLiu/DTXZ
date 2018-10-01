@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+
+body{
+    background-color: #fafafa;
+}
+
+
+.main{
+
+    width: 699px;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.main ul{
+    padding-left: 20px;
+}
+
+.main  li{
+    margin-bottom: 20px;
+}
+
+
+
+.main button[type="submit"]{
+    float: right;
+    margin-right: 200px;
+}
+
+
+.fileupload{
+    overflow: hidden;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: url(../images/upload-bg.png) no-repeat;
+    background-size: 60px;
+    position: relative;
+    top: 20px;
+}
+
+.fileupload input[type="file"]{
+    cursor: pointer;
+    display: block;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    /*vertical-align: middle;*/
+}
+
+
+
+/*班级管理那里*/
+#clazzname{
+    margin-left: 10px;
+
+}
+#clazzdesc{
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+

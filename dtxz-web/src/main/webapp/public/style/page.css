@@ -1,0 +1,69 @@
+/* 分页（申根&丁度铭） */
+.pagination-ul {
+	list-style: none;
+	overflow: hidden;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.pagination-ul li{
+	display: inline-block;
+	height: 32px;
+	margin-right: 5px;
+}
+
+.pagination-ul li:hover {
+	background-color: #00bc9b;
+}
+
+.pagination-ul li:hover > a {
+	color: white;
+}
+
+.pagination-ul li.first-page{
+	width: 44px;
+}
+
+.pagination-ul li.last-page{
+	width: 44px;
+}
+
+.pagination-ul li.prev-page{
+	width: 56px;
+}
+
+.pagination-ul li.next-page{
+	width: 56px;
+}
+
+.pagination-ul li.page-number{
+	width: 32px;
+}
+
+
+.pagination-ul li>a{
+	display: block;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border: 1px solid #e1e1e1;
+	color: #999;
+}
+
+.pagination-ul .active{
+	background-color: #00bc9b;
+	border-color: #00bc9b;
+	/*box-sizing: border-box;*/
+}
+
+/* 页禁点击类 */
+.pagination-ul .disabled a:hover {
+	border-color:#e3e3e3;
+ 	background:#e3e3e3;
+ 	color:#FFF;
+ 	cursor:not-allowed;
+}
+
+.active>a>p{
+	color: #FFF;
+}

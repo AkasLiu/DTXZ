@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+
+
+.btn {
+	display: inline-block;
+    outline: none;
+    padding:1px 6px;
+    text-align: center;
+    cursor: pointer;
+    min-width: 60px;
+    min-height: 30px;
+    border-radius: 4px;
+    text-align: center;
+    font:14px/28px "Microsoft YaHei";
+    vertical-align: middle;
+    border: 1px solid transparent;
+    color: #fff;
+}
+
+a.btn{
+    display: inline-block;
+
+    padding:1px 6px;
+    vertical-align: middle;
+    text-decoration: none;
+    font: 14px/28px "Microsoft YaHei";
+    min-width: 58px;
+    min-height: 28px;
+}
+a.btn:hover{
+    color: #fff ;
+}
+
+/*详情按钮*/
+.btn-success{
+
+    border-color: #4cae4c;
+    background-color: #5cb85c;
+}
+
+.btn-success:hover{
+
+    box-shadow: 1px 1px 5px #449d44;
+    border-color: #398439;
+    background-color: #449d44;
+}
+
+
+.btn-info{
+    border-color: rgb(70, 184, 218);
+    background-color: rgb(91, 192, 222);
+
+}
+
+.btn-info:hover{
+    box-shadow: 1px 1px 3px #31b0d5;
+    border-color: #269abc;
+    background-color: #31b0d5;
+}
+
+.btn-warning{
+    border-color: #eea236;
+    background-color: #f0ad4e;
+
+}
+.btn-warning:hover{
+
+    box-shadow: 1px 1px 5px #ec971f;
+    border-color: #d58512;
+    background-color: #ec971f;
+
+}
+
+.btn-danger{
+    border-color: rgb(212, 63, 58);
+    background-color: rgb(217, 83, 79);
+
+}
+.btn-danger:hover{
+
+    box-shadow: 1px 1px 5px #c9302c;
+    border-color: #AC2925;
+    background-color: #c9302c;
+
+}
+
+
+.btn-default{
+    color: rgb(51, 51, 51);
+    background-color: #fff;
+}
+
+.btn-default:hover{
+    box-shadow: 1px 1px 4px #e6e6e6;
+    border: 1px solid #adadad;
+    background-color: #e6e6e6;
+}
+
+.btn-primary{
+    background-color: rgb(51, 122, 183);
+    color: #fff;
+}
+
+.btn-primary:hover{
+    border: 1px solid #235784;
+    box-shadow: 1px 1px 4px #235784;
+    background-color: rgb(41, 101, 152);
+}
+
+
+/*灰色*/
+.btn-grey{
+    background-color: #666;
+    color: #fff;
+}
+.btn-grey:hover{
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    background-color: #808080;
+    border: 1px solid #747474;
+}

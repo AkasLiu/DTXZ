@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px "Microsoft YaHei","Arial Narrow",HELVETICA;background:#eee;-webkit-text-size-adjust:100%;}
+
+
+a{
+    font-family: Arial, Helvetica, sans-serif;;
+    color:#333;
+    text-decoration:none
+}
+a:hover{
+    color:#666;
+}
+
+strong,i,em{
+    font-weight: normal;
+}
+
+
+em{
+    font-style:normal
+}
+li{
+    list-style:none
+}
+img{
+    border:0;vertical-align:middle
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0}
+p{
+    word-wrap:break-word;
+}
+
+.red{
+    color: #f00 !important;
+}
+.red:hover{
+    color: #f00 !important;
+}
+
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+
+
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+    _height:1%;
+}
+
+
+/*水平翻转*/
+.flip{
+    height: 100%;
+    position:relative;
+    transition:0.6s;
+    transform-style:preserve-3d;
+}
+.front,.back{
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    backface-visibility:hidden;}
+.front{
+
+    z-index:2;
+}
+.back{
+
+    transform:rotateY(-180deg);
+}

@@ -1,0 +1,24 @@
+
+
+
+
+//文档加载后初始化
+$(document).ready(function(){
+
+
+    $('.menu dd').click(function(){
+
+
+        $('.menu dd').removeClass('active');
+
+        $(this).addClass('active');
+
+
+
+    });
+
+
+
+
+
+});

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" href="style/base.css" />
+
+		<link rel="stylesheet" href="style/essay_myessay.css" />
+
+
+		
+	</head>
+	<body>
+
+		
+		<div class = "box">
+			<div class = "box-content">
+				<ul class = "essay-ul">
+					<li>
+						<div class="li-content">
+							<img src="images/null-headimg.png" />
+							<div class = "essay-contain">
+								<div class = "essay-title"><a href = "javascript:void(0);">这是一个很沉重的问题！</a></div>
+								<div class = "essay-foot">
+									<div class = "eassay-foot-left">
+										<label>发表时间</label>
+										<span>2018-10-10</span>
+										<label>最后回复</label>
+										<span>一天前</span>
+									</div>
+									<div class = "eassay-foot-right">
+										<label>回复</label>
+										<span>88888</span>
+										<p>|</p>
+										<label>赞</label>
+										<span>6666666</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="li-content">
+							<img src="images/null-headimg.png" />
+							<div class = "essay-contain">
+								<div class = "essay-title">
+									<a href = "javascript:void(0);">
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+										这是一个很沉重的问题！
+									</a>
+								</div>
+								<div class = "essay-foot">
+									<div class = "eassay-foot-left">
+										<label>发表时间</label>
+										<span>2018-10-10</span>
+										<label>最后回复</label>
+										<span>一天前</span>
+									</div>
+									<div class = "eassay-foot-right">
+										<label>回复</label>
+										<span>8888</span>
+										<p>|</p>
+										<label>赞</label>
+										<span>666</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="li-content">
+							<img src="images/null-headimg.png" />
+							<div class = "essay-contain">
+								<div class = "essay-title"><a href = "javascript:void(0);">这是一个很沉重的问题！</a></div>
+								<div class = "essay-foot">
+									<div class = "eassay-foot-left">
+										<label>发表时间</label>
+										<span>2018-10-10</span>
+										<label>最后回复</label>
+										<span>一天前</span>
+									</div>
+									<div class = "eassay-foot-right">
+										<label>回复</label>
+										<span>8888</span>
+										<p>|</p>
+										<label>赞</label>
+										<span>666</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="li-content">
+							<img src="images/null-headimg.png" />
+							<div class = "essay-contain">
+								<div class = "essay-title"><a href = "javascript:void(0);">这是一个很沉重的问题！</a></div>
+								<div class = "essay-foot">
+									<div class = "eassay-foot-left">
+										<label>发表时间</label>
+										<span>2018-10-10</span>
+										<label>最后回复</label>
+										<span>一天前</span>
+									</div>
+									<div class = "eassay-foot-right">
+										<label>回复</label>
+										<span>8888</span>
+										<p>|</p>
+										<label>赞</label>
+										<span>666</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="li-content">
+							<img src="images/null-headimg.png" />
+							<div class = "essay-contain">
+								<div class = "essay-title"><a href = "javascript:void(0);">这是一个很沉重的问题！</a></div>
+								<div class = "essay-foot">
+									<div class = "eassay-foot-left">
+										<label>发表时间</label>
+										<span>2018-10-10</span>
+										<label>最后回复</label>
+										<span>一天前</span>
+									</div>
+									<div class = "eassay-foot-right">
+										<label>回复</label>
+										<span>8888</span>
+										<p>|</p>
+										<label>赞</label>
+										<span>666</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="li-content">
+							<img src="images/null-headimg.png" />
+							<div class = "essay-contain">
+								<div class = "essay-title"><a href = "javascript:void(0);">这是一个很沉重的问题！</a></div>
+								<div class = "essay-foot">
+									<div class = "eassay-foot-left">
+										<label>发表时间</label>
+										<span>2018-10-10</span>
+										<label>最后回复</label>
+										<span>一天前</span>
+									</div>
+									<div class = "eassay-foot-right">
+										<label>回复</label>
+										<span>8888</span>
+										<p>|</p>
+										<label>赞</label>
+										<span>666</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="li-content">
+							<img src="images/null-headimg.png" />
+							<div class = "essay-contain">
+								<div class = "essay-title"><a href = "javascript:void(0);">这是一个很沉重的问题！</a></div>
+								<div class = "essay-foot">
+									<div class = "eassay-foot-left">
+										<label>发表时间</label>
+										<span>2018-10-10</span>
+										<label>最后回复</label>
+										<span>一天前</span>
+									</div>
+									<div class = "eassay-foot-right">
+										<label>回复</label>
+										<span>8888</span>
+										<p>|</p>
+										<label>赞</label>
+										<span>666</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="li-content">
+							<img src="images/null-headimg.png" />
+							<div class = "essay-contain">
+								<div class = "essay-title"><a href = "javascript:void(0);">这是一个很沉重的问题！</a></div>
+								<div class = "essay-foot">
+									<div class = "eassay-foot-left">
+										<label>发表时间</label>
+										<span>2018-10-10</span>
+										<label>最后回复</label>
+										<span>一天前</span>
+									</div>
+									<div class = "eassay-foot-right">
+										<label>回复</label>
+										<span>8888</span>
+										<p>|</p>
+										<label>赞</label>
+										<span>666</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="li-content">
+							<img src="images/null-headimg.png" />
+							<div class = "essay-contain">
+								<div class = "essay-title"><a href = "javascript:void(0);">这是一个很沉重的问题！</a></div>
+								<div class = "essay-foot">
+									<div class = "eassay-foot-left">
+										<label>发表时间</label>
+										<span>2018-10-10</span>
+										<label>最后回复</label>
+										<span>一天前</span>
+									</div>
+									<div class = "eassay-foot-right">
+										<label>回复</label>
+										<span>8888</span>
+										<p>|</p>
+										<label>赞</label>
+										<span>666</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="li-content">
+							<img src="images/null-headimg.png" />
+							<div class = "essay-contain">
+								<div class = "essay-title"><a href = "javascript:void(0);">这是一个很沉重的问题！</a></div>
+								<div class = "essay-foot">
+									<div class = "eassay-foot-left">
+										<label>发表时间</label>
+										<span>2018-10-10</span>
+										<label>最后回复</label>
+										<span>一天前</span>
+									</div>
+									<div class = "eassay-foot-right">
+										<label>回复</label>
+										<span>8888</span>
+										<p>|</p>
+										<label>赞</label>
+										<span>666</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>					
+				</ul>
+				
+				<ul class = "pagination-ul">
+					<li class = "first-page"><a href = "javascript:void(0)">首页</a></li>
+					<li class = "prev-page"><a href = "javascript:void(0)">上一页</a></li>
+					<li class = "page-number show"><a href = "javascript:void(0)"><p>1<p></a></li>
+					<li class = "page-number"><a href = "javascript:void(0)"><p>2<p></a></li>
+					<li class = "next-page"><a href = "javascript:void(0)">下一页</a></li>
+					<li class = "last-page"><a href = "javascript:void(0)">末页</a></li>
+				</ul>
+				
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript" src="js/essay_myessay.js" ></script>
+		
+	</body>
+</html>

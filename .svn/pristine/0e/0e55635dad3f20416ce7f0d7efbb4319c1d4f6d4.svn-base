@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="shortcut icon " type="images/x-icon" href="./favicon.ico">
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/tag.css">
+
+	<!--链入基本按钮库-->
+	<link rel="stylesheet" href="style/button.css">
+	<!--链入前台公共样式-->
+	<link rel="stylesheet" href="style/common.css">
+
+	<link rel="stylesheet" href="style/user_personal_common.css">
+
+	<script src="js/jquery.js"></script>
+	<script src="js/user_modifyInfo.js"></script>
+
+
+</head>
+<body>
+
+
+	<div class="main">
+		<h3 class="title">资料修改</h3>
+
+		<form action="">
+			<ul>
+				<li><label for="">昵称</label><input class="txt-in" type="text"></li>
+				<li class="clearfix">
+					<input id="radio-nan"       type="radio" name="sex" value="男">
+					<label id=lb-nan"           for="radio-nan"  class="radio-icon"></label>
+					<label class="radio-txt"    for="radio-nan">男</label>
+					<input id="radio-nv" type="radio" name="sex" value="男">
+					<label id="lb-nv" for="radio-nv" class="radio-icon"></label>
+					<label class="radio-txt"   for="radio-nv">女</label>
+				</li>
+				<li><label for="">年龄</label><input class="txt-in" type="text"></li>
+			</ul>
+			<button class="btn btn-info" type="submit">提交</button>
+		</form>
+
+
+	</div>
+
+	<div class="main">
+		<form id="pwdfm" action="" method="post" onsubmit="return check();">
+
+
+		<h3 class="title">密码修改</h3>
+		<ul>
+			<li><label for="oldpwd">原始密码：</label><input id="oldpwd" class="txt-in" type="password"></li>
+			<li><label for="newpwd">更新密码：</label><input id="newpwd" class="txt-in" type="password"></li>
+			<li><label for="checkpwd">确认密码：</label><input id="newpwdcheck" class="txt-in" type="password"></li>
+		</ul>
+		<button id="submitPwdBtn" class="btn btn-info" type="submit">提交</button>
+		</form>
+
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的考试</title>
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/exam_myexam.css">
+</head>
+<body>
+	<div class="myexam-container">
+		<div class="create-box">
+			<h3 class="title">
+				创建考试
+			</h3>
+			<form action="">
+				<div class="create-content">
+					<div class="content-header">
+						<span>选中班级</span>
+						<a href="user_classmanager.html">
+							<i class="add-icon"></i>
+						</a>
+					</div>
+					<div class="classroom-sel">
+						<div class="class-option">
+							<input type="checkbox" name="classnames" id="test1">
+							<label class="checkbox-icon" for="test1"></label>
+							<label for="test1">六年1班</label>
+						</div>
+						<div class="class-option">
+							<input type="checkbox" name="classnames" id="test2">
+							<label class="checkbox-icon" for="test2"></label>
+							<label for="test2">六年2班</label>
+						</div>
+						<div class="class-option">
+							<input type="checkbox" name="classnames" id="test3">
+							<label class="checkbox-icon" for="test3"></label>
+							<label for="test3">六年3班</label>
+						</div>
+					</div>
+
+					<!--  选择考卷  -->
+					<div class="content-header">
+						<span>选中考卷</span>
+						<a href="exam_createroom.html" target="_blank">
+							<i class="add-icon"></i>
+						</a>
+					</div>
+
+					<div class="exam-sel">
+						<div class="answer-box">
+							<input type="radio" name="answer-radio" id="answer-raido-1">
+							<label class="radio-icon" for="answer-raido-1"></label>
+							<label for="answer-raido-1">A</label>
+						</div>
+						<div class="answer-box">
+							<input type="radio" name="answer-radio" id="answer-raido-2">
+							<label class="radio-icon" for="answer-raido-2"></label>
+							<label for="answer-raido-2">B</label>
+						</div>
+						<div class="answer-box">
+							<input type="radio" name="answer-radio" id="answer-raido-3">
+							<label class="radio-icon" for="answer-raido-3"></label>
+							<label for="answer-raido-3">C</label>
+						</div>
+						<div class="answer-box">
+							<input type="radio" name="answer-radio" id="answer-raido-4">
+							<label class="radio-icon" for="answer-raido-4"></label>
+							<label for="answer-raido-4">D</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+
+
+		<div class="exam-history">
+			<h3 class="title">
+				考试记录
+			</h3>
+			
+			<table>
+				<table class="table-box">
+					<tbody>
+						<tr>
+							<th>考试名称</th>
+							<th>考试状态</th>
+							<th>完成时间</th>
+							<th>分数</th>
+							<th>排行</th>
+						</tr>
+						<tr class="active">
+							<td title="毛概">				
+								<a href="exam_doing.html" target="_blank">
+									毛概
+								</a>
+							</td>
+							<td title="点击进入考场">
+								<a href="exam_doing.html">
+									正在进行
+								</a>
+							</td>
+							<td>2017-01-01</td>
+							<td>88</td>
+							<td>3</td>
+							
+						</tr>
+
+						<tr>
+							<td title="新12中关于十八大的期末考试">新12中关于十八大的期末考试</td>
+							<td>已完成</td>
+							<td>2017-01-01</td>
+							<td>88</td>
+							<td>3</td>
+						</tr>
+
+						<tr>
+							<td title="计算机技能测试">计算机技能测试</td>
+							<td>已完成</td>
+							<td>2017-01-01</td>
+							<td>88</td>
+							<td>9</td>
+						</tr>
+
+						<tr>
+							<td title="毛泽东思想与邓小平理论检验">毛泽东思想与邓小平理论检验</td>
+							<td>已完成</td>
+							<td>2017-02-01</td>
+							<td>80</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td title="毛泽东思想与邓小平理论检验">毛泽东思想与邓小平理论检验</td>
+							<td>已完成</td>
+							<td>2017-02-01</td>
+							<td>80</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td title="毛泽东思想与邓小平理论检验">毛泽东思想与邓小平理论检验</td>
+							<td>已完成</td>
+							<td>2017-02-01</td>
+							<td>80</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td title="毛泽东思想与邓小平理论检验">毛泽东思想与邓小平理论检验</td>
+							<td>已完成</td>
+							<td>2017-02-01</td>
+							<td>80</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td title="毛泽东思想与邓小平理论检验">毛泽东思想与邓小平理论检验</td>
+							<td>已完成</td>
+							<td>2017-02-01</td>
+							<td>80</td>
+							<td>4</td>
+						</tr>
+					</tbody>
+				</table>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

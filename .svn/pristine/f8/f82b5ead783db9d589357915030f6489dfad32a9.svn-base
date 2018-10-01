@@ -1,0 +1,180 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>错题集</title>
+	<!--图标-->	
+	<link rel="shortcut icon " type="images/x-icon" href="${pageContext.request.contextPath}//favicon.ico">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/style/base.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/style/common.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/style/exam_error_union.css">
+    <script src="${pageContext.request.contextPath}/public/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/public/js/exam_curexam.js"></script>
+
+</head>
+<body>
+
+			<!---------------------------    头部  ------------------------------------>
+		<jsp:include page="${pageContext.request.contextPath}/WEB-INF/view/common/header.jsp"></jsp:include>
+
+	<!-- 广告 -->
+    <div class="adv-box">
+        <img src="${pageContext.request.contextPath}/public/images/advs/hackathon_banner.png" alt="刷题马拉松大赛" class="exam-adv">
+    </div>
+
+    <div class="big-container">
+        <div class="left left-content">
+            <div class="normal-box weather-box">
+                <img src="images/weather/qintian-wanshang.png" alt="...">
+                <span>周日</span>
+                <p>天气凉爽，适合睡后刷题</p>
+            </div>
+
+            <div class="person-info normal-box">
+                <div class="photo-box">
+                    <div class="radius-box">
+                        <img src="images/null-headimg.png" alt="">
+                    </div>
+                </div>
+                <div class="user-name">
+                    beanSeedling
+                </div>
+
+                <div class="person-details challenge-num-icon">
+                    <span>已挑战</span>
+                    <span class="right">38题</span>
+                </div>
+
+                <div class="person-details right-num-icon">
+                    <span>已答对</span>
+                    <span class="right">28题</span>
+                </div>
+
+                <div class="person-details exam-num-icon">
+                    <span>已考试</span>
+                    <span class="right">3次</span>
+                </div>
+                <!-- 正确率 -->
+                <div class="pass-box">
+                    <p>正确率</p>
+                    <p>50.00%</p>
+                </div>
+            </div>
+
+            <div class="normal-box popular-adv">
+                <h3 class="red-pot-title">
+                    热门推荐
+                    <i class="carousel-last-icon right" title="下一页"></i>
+                    <i class="carousel-next-icon right" title="上一页"></i>
+                </h3>
+
+                <!-- 广告框 -->
+                <div class="popular-adv-box">
+                    <a href="">
+                        <img src="${pageContext.request.contextPath}/public/images/advs/826546_1483534607215_238x923.png" alt="">
+                    </a>
+                    <a href="">
+                        <img src="${pageContext.request.contextPath}/public/images/advs/826546_1483534632567_238x922.png" alt="">
+                    </a>
+                    <a href="">
+                        <img src="${pageContext.request.contextPath}/public/images/advs/3311212_1510900554629_7D2A2B50F7E3C99128B238F40F682AEC.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+            <!-- 右边栏错题 -->
+        <div class="right-content right normal-box">
+            <h3 class="red-pot-title"><a>错题集</a></h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <th width="475">错题题目</th>
+                        <th width="100">正确率</th>
+                    </tr>
+
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="exam_error_title.html">基于以下 HTML 结构，以下关于 main1.css 和 main2.css 的描述有哪些是正确的？</a></td>
+                        <td>23%</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+            <!-- 分页 -->
+            <ul class = "pagination-ul">
+                <li class = "first-page"><a href = "javascript:void(0)">首页</a></li>
+                <li class = "prev-page"><a href = "javascript:void(0)">上一页</a></li>
+                <li class = "page-number active"><a href = "javascript:void(0)"><p>1<p></a></li>
+                <li class = "page-number"><a href = "javascript:void(0)"><p>2<p></a></li>
+                <li class = "page-number"><a href = "javascript:void(0)"><p>3<p></a></li>
+                <li class = "page-number"><a href = "javascript:void(0)"><p>4<p></a></li>
+                <li class = "page-number"><a href = "javascript:void(0)"><p>5<p></a></li>
+                <li class = "next-page"><a href = "javascript:void(0)">下一页</a></li>
+                <li class = "last-page"><a href = "javascript:void(0)">末页</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+	<!-- 尾部 -->
+	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/view/common/footer.jsp"></jsp:include>
+
+</body>
+</html>

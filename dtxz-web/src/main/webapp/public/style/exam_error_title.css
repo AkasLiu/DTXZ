@@ -1,0 +1,183 @@
+/* 通用辅助类 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+/* *****************容器类**************** */
+.error_title_box {
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	width: 960px;
+}
+/* 通用盒子 */
+.normal-box {
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #333;
+	background-color: rgb(253, 253, 253);
+	border-radius: 4px;
+	border: 0.1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 页面路径 */
+.crumbs-path {
+	color: #666;
+	font-size: 14px;
+	margin: 10px 0;
+}
+
+.crumbs-path a {
+	color: #666;
+}
+
+.crumbs-path a:hover {
+	color: #25bb9b;
+}
+
+.title-box {
+	vertical-align: center;
+	padding: 40px 30px;
+
+	line-height: 16px;
+	font-size: 16px;
+	color: #333;
+	/* 对超过文字的隐藏 */
+	white-space: nowrap;
+	/*省略号*/
+	text-overflow: ellipsis;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.green-pot {
+	display: block;
+	float: left;
+	height: 10px;
+	width: 0;
+	background-color: #1ABC9C;
+	margin-top: 5px;
+	margin-right: 10px;
+	padding: 0px 5px;
+	border-radius: 20px;
+}
+
+.answer-box {
+	background-color: #f9f9f9;
+	padding: 20px 30px 40px;
+	color: #666;
+}
+
+.answer-box>span {
+	margin-left: 12px;
+}
+
+/* 选项 */
+.exam-question-option {
+	margin: 20px 0;
+	padding: 10px 15px;
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 12px;
+	border: 0.1px solid rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+}
+
+.exam-question-option>.option {
+	margin-right: 10px;
+}
+/* 答对这道题 */
+.correct {
+	border-color: #1abc9c !important;
+}
+/* 打错这道题 */
+.error {
+	border-color: #ff6547 !important;
+}
+
+.error-text {
+	color: #ff6547 !important;
+}
+
+/* 辅助工具 */
+.extra-tool {
+	color: #666;
+}
+
+.extra-tool span {
+	color: #999;
+	width: 8px;
+}
+
+.one-tool {
+	display: block;
+	float: right;
+	cursor: pointer;
+	padding-left: 22px;
+	padding-right: 5px;
+	/*width: 60px;*/
+	height: 20px;
+	background: url("../images/error-title-tool-tip.png")
+		no-repeat center;
+}
+
+.note-icon {
+	background-position: 0 -491px;
+}
+
+.solve-icon {
+	background-position: 0 2px;
+}
+
+.collect-icon {
+	background-position: 0 -89px;
+}
+
+.find-error-icon {
+	background-position: 0 -184px;
+}
+
+.pre-next-top-box {
+	position: fixed;
+	text-align: center;
+	left: 50%;
+	margin-left: 480px;
+	bottom: 288.5px;
+	width: 110px;
+}
+
+.pre-next-top-box a {
+	display: block;
+	height: 44px;
+	line-height: 44px;
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 10px;
+	background-color: #9c9fa3;
+	border-radius: 2px;
+}
+
+.pre-next-top-box a:hover {
+	color: white;
+	background-color: #707883;
+}
+
+/* 回到顶部默认隐藏 */
+#back-to-top {
+	display: none;
+}

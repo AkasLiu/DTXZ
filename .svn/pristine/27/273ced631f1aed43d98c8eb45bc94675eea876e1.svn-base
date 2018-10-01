@@ -1,0 +1,17 @@
+package cc.siriuscloud.dtxz.dao;
+
+import cc.siriuscloud.dtxz.bean.Exam;
+
+public interface ExamMapper {
+    int deleteByPrimaryKey(String examId);
+
+    int insert(Exam record);
+
+    int insertSelective(Exam record);
+
+    Exam selectByPrimaryKey(String examId);
+
+    int updateByPrimaryKeySelective(Exam record);
+
+    int updateByPrimaryKey(Exam record);
+}

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.ExamMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.Exam" >
+    <id column="exam_id" property="examId" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="begintime" property="begintime" jdbcType="TIMESTAMP" />
+    <result column="duration" property="duration" jdbcType="INTEGER" />
+    <result column="clazz_id" property="clazzId" jdbcType="VARCHAR" />
+    <result column="ep_id" property="epId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    exam_id, title, status, createtime, begintime, duration, clazz_id, ep_id
+  </sql>
+  
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dtxz_exam
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </select>
+  
+
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_exam
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </delete>
+
+    <!-- 查询用户的考试 -->
+   <select  id="selectByUser" resultMap="BaseResultMap">
+   select distinct 
+	   exam.exam_id, exam.title, exam.begintime, exam.duration
+	   from 
+	   dtxz_exam exam,
+	   dtxz_user user,
+	   dtxz_clazz clazz,
+	   dtxz_user_clazz user_clazz
+	   where
+	   exam.clazz_id = clazz.clazz_id and 
+	   user_clazz.clazz_id =  clazz.clazz_id and 
+	   user_clazz.user_id = user.user_id
+	   order by exam.begintime asc
+ 
+   </select>  
+   
+    <!-- 查询用户的考试总数目 -->
+   <select  id="selectCountByUser" resultType="java.lang.Long" parameterType="cc.siriuscloud.dtxz.bean.User">
+   select 
+	   count( distinct exam.exam_id)
+	   from 
+	   dtxz_exam exam,
+	   dtxz_user user,
+	   dtxz_clazz clazz,
+	   dtxz_user_clazz user_clazz
+   	where
+   	exam.clazz_id = clazz.clazz_id and 
+   user_clazz.clazz_id =  clazz.clazz_id and 
+   user_clazz.user_id = user.user_id
+   order by exam.begintime asc
+   </select>  
+   
+   <!--  获取用户的参与考试的列表(含题目总数) -->
+   <select  id="getHisExamByUser" parameterType="cc.siriuscloud.dtxz.bean.User" resultType="cc.siriuscloud.dtxz.bean.vo.HisExamVo">
+       select 
+        exam.exam_id as examId, exam.createtime, exam.title, exam.begintime,exam.duration , count(exe.exercise_id) as allNum
+        from 
+        dtxz_user user,
+        dtxz_exam exam,
+        dtxz_exampaper exampaper,
+        dtxz_paper_exe paperexe,
+        dtxz_exercise exe,
+        dtxz_submit submit
+        where 
+        user.user_id = #{userId} and
+        user.user_id = submit.examinee_id and
+        submit.exercise_id = exe.exercise_id and
+        paperexe.exercise_id = exe.exercise_id and
+        paperexe.ep_id = exampaper.ep_id and
+        exampaper.ep_id = exam.ep_id 
+        group by exam.exam_id 
+        order by begintime desc
+   </select>
+   
+   <!-- 获取用户的参与考试的列表（含答对题目总数，但是1题没答对的考试没有） -->
+    <select  id="getHisCorExamByUser" parameterType="cc.siriuscloud.dtxz.bean.User" resultType="cc.siriuscloud.dtxz.bean.vo.HisExamVo">
+       select 
+        exam.exam_id as examId,  count(exe.exercise_id) as corNum
+        from 
+        dtxz_user user,
+        dtxz_exam exam,
+        dtxz_exampaper exampaper,
+        dtxz_paper_exe paperexe,
+        dtxz_exercise exe,
+        dtxz_submit submit
+        where 
+        user.user_id = #{userId} and
+        user.user_id = submit.examinee_id and
+        submit.answer = exe.answer and
+        submit.exercise_id = exe.exercise_id and
+        paperexe.exercise_id = exe.exercise_id and
+        paperexe.ep_id = exampaper.ep_id and
+        exampaper.ep_id = exam.ep_id 
+        group by exam.exam_id 
+        order by begintime desc
+   </select>
+   
+
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.Exam">
+    insert into dtxz_exam (exam_id, title, status, 
+      createtime, begintime, duration, 
+      clazz_id, ep_id)
+    values (#{examId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{begintime,jdbcType=TIMESTAMP}, #{duration,jdbcType=TIME}, 
+      #{clazzId,jdbcType=VARCHAR}, #{epId,jdbcType=VARCHAR})
+     
+  </insert>
+  
+  
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.Exam" >
+    insert into dtxz_exam
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="examId != null" >
+        exam_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="begintime != null" >
+        begintime,
+      </if>
+      <if test="duration != null" >
+        duration,
+      </if>
+      <if test="clazzId != null" >
+        clazz_id,
+      </if>
+      <if test="epId != null" >
+        ep_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="examId != null" >
+        #{examId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="begintime != null" >
+        #{begintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="duration != null" >
+        #{duration,jdbcType=TIME},
+      </if>
+      <if test="clazzId != null" >
+        #{clazzId,jdbcType=VARCHAR},
+      </if>
+      <if test="epId != null" >
+        #{epId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.Exam" >
+    update dtxz_exam
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="begintime != null" >
+        begintime = #{begintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="duration != null" >
+        duration = #{duration,jdbcType=TIME},
+      </if>
+      <if test="clazzId != null" >
+        clazz_id = #{clazzId,jdbcType=VARCHAR},
+      </if>
+      <if test="epId != null" >
+        ep_id = #{epId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.Exam" >
+    update dtxz_exam
+    set title = #{title,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      begintime = #{begintime,jdbcType=TIMESTAMP},
+      duration = #{duration,jdbcType=TIME},
+      clazz_id = #{clazzId,jdbcType=VARCHAR},
+      ep_id = #{epId,jdbcType=VARCHAR}
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </update>
+  
+  
+  <select id="countExamByUserId" parameterType="java.lang.String" resultType="java.lang.Long" >
+  	select COUNT(distinct uc.clazz_id) from dtxz_user_clazz uc ,dtxz_exam e 
+		where uc.clazz_id=e.clazz_id and uc.user_id=#{userId} 
+  </select>
+
+	<select id="selectMyExam" parameterType="java.lang.String" resultMap="BaseResultMap">
+	select distinct
+		exam_id,title,
+		status,createtime,begintime,duration,clazz_id,ep_id
+		 from dtxz_exam_submit 
+		 	where examinee_id=#{userId}
+		 		order by begintime desc limit 5
+	
+	</select>
+
+
+  
+</mapper>

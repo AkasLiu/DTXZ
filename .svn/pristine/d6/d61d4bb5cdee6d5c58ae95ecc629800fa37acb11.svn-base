@@ -1,0 +1,135 @@
+
+
+/* 图标类 */
+.history-icon {
+	display: inline-block;
+	float: left;
+	width: 30px;
+	height: 30px;
+	background: url("../images/history.png") no-repeat;
+	background-size: 30px;
+}
+
+/* 辅助类 */
+.common-box {
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.grey-hr {
+	color: rgba(0, 0, 0, 0.1);
+	margin: 20px 0;
+}
+/* 强调一些数字 */
+.num-active {
+	color: #00bc9b !important;
+	margin-right: 40px;
+	font-weight: bold;
+}
+
+
+/* 容器类 */
+.exam-his-box {
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	/*padding: 20px;*/
+	overflow: hidden;
+	width: 800px;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+}
+
+.exam-his-header {
+	font-size: 20px;
+	padding: 24px 24px;
+	color: #ddd;
+	font-weight: bold;
+	background-color: #2d374b;
+}
+
+.exam-his-content {
+	text-align: center;
+	/*background-color: #999;*/
+}
+
+.exam-his-summary {
+	padding: 20px 10px 0;
+}
+
+.table-box {
+	margin: 20px auto;
+	font-size: 15px;
+	border: 0.1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+	color: #666;
+	/* 背景色渐变 */
+	/* background: -webkit-linear-gradient(top, 
+	 	 rgba(45,55,128), rgba(45,55,128, 0.0));
+	 -webkit-background-clip: text;         规定背景的划分区域
+	 -webkit-text-fill-color: transparent;  */ /*防止字体颜色覆盖*/
+}
+
+
+
+/********* 容器类内的元素设计 *******/
+
+/* span样式 */
+.exam-his-content span {
+	font-size: 14px;
+	color: #666;
+}
+
+.table-box .active td,a{
+	color: red;
+}
+
+.table-box th {
+	/*background-color: #fff;*/
+	height: 50px;
+	line-height: 50px;
+}
+
+.table-box td,th {
+	border-bottom: 0.1px dashed rgba(74, 74, 74, 0.1);
+}
+
+.table-box td,th {
+	padding: 0 40px;
+	max-width: 100px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	/* 设置不会换行 */
+	white-space: nowrap;
+	/* 设置隐藏超出部分并显示... */
+	text-overflow: ellipsis;
+	border-collapse: collapse;
+	overflow: hidden;
+}
+
+.more-his-btn {
+	display: inline-block;
+
+	padding: 12px 30px;
+	margin-bottom: 20px;
+	color: white;
+	cursor: pointer;
+	/*width: 200px;*/
+	/*height: 40px;*/
+	background-color: blue;
+	border-style: none;
+	border-radius: 20px;
+	background-color: #2d374b;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);	
+}
+
+.more-his-btn:hover {
+	color: white;
+	background-color: rgb(45,55,128, 0.9);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);	
+}
+
+
+

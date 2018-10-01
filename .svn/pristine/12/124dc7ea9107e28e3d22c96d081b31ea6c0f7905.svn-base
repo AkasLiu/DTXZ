@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	   xmlns:jee="http://www.springframework.org/schema/jee" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd 
+       					   http://www.springframework.org/schema/tx 
+       					   http://www.springframework.org/schema/tx/spring-tx.xsd
+       					   http://www.springframework.org/schema/aop 
+       					   http://www.springframework.org/schema/aop/spring-aop.xsd
+       					   http://www.springframework.org/schema/context 
+       					   http://www.springframework.org/schema/context/spring-context.xsd
+       					   http://www.springframework.org/schema/jdbc 
+       					   http://www.springframework.org/schema/jdbc/spring-jdbc-4.2.xsd
+       					   http://www.springframework.org/schema/jee 
+       					   http://www.springframework.org/schema/jee/spring-jee-4.2.xsd
+       					   http://www.springframework.org/schema/data/jpa 
+       					   http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd
+       					   http://www.springframework.org/schema/mvc 
+       					   http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+       					   http://www.springframework.org/schema/util 
+       					   http://www.springframework.org/schema/util/spring-util-4.2.xsd
+       					   ">
+
+
+	<!-- 包扫描 -->
+	<context:component-scan base-package="cc.siriuscloud.dtxz"></context:component-scan>
+	
+		
+	<!-- 默认创建 mapper，adpter，配置adpter支持json
+		<mvc:annotation-driven></mvc:annotation-driven>	
+	 -->
+	 <mvc:annotation-driven>  
+		 <mvc:message-converters register-defaults="true">  
+		    <bean class="org.springframework.http.converter.StringHttpMessageConverter"> 
+			     <constructor-arg value="UTF-8" />  
+		    </bean>  
+		 </mvc:message-converters>  
+	</mvc:annotation-driven>  
+
+		
+	<!--
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
+	 配置注解处理器适配器 
+			功能：调用controller方法，执行controller
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>
+	-->
+
+	
+	<!-- 视图映射器 -->
+	<bean name="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+	<mvc:resources location="/WEB-INF/view/" mapping="/view/**"></mvc:resources>
+
+	<!-- 数据库相关配置 -->
+	<import resource="spring-db.xml"/>
+	<import resource="spring-tx.xml"/>
+
+
+</beans>

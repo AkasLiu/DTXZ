@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>用户管理</title>
+	    <meta charset="UTF-8">
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" />
+	    <link rel="stylesheet" type="text/css" href="css/style.css" />
+	    <script type="text/javascript" src="js/jquery.min.js"></script>  
+	</head>
+	<body>
+		<form class="form-inline definewidth m20" action="" method="post">
+			用户名：<input name="userName" class="abc input-default" value=""></input>&nbsp;&nbsp;
+			<button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
+		</form>
+		<table class="table table-bordered table-hover definewidth m10">
+		    <thead>
+			    <tr>
+			        <th>编号</th>
+			        <th>用户名</th>
+			        <th>真实姓名</th>
+			        <th>职业</th>
+			        <th>认证信息</th>
+			        <th>资格证</th>
+			        <th style="text-align:center;">是否通过</th>
+			    </tr>
+		    </thead>
+			<tr>
+				<td>1</td>
+				<td>LHF</td>
+				<td>刘海帆</td>
+				<td>教师</td>
+				<td>44********</td>
+				<td></td>
+				<td style="text-align:center;">
+					<a href="#">是</a>
+					/
+					<a href="#">否</a>
+				</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>sirius</td>
+				<td>曾晰铨</td>
+				<td>教师</td>
+				<td>44********</td>
+				<td></td>
+				<td style="text-align:center;">
+					<a href="#">是</a>
+					/
+					<a href="#">否</a>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

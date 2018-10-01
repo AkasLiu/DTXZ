@@ -1,0 +1,138 @@
+
+body {
+	background-color: #fff;
+}
+
+/* 容器类 */
+.myexam-container {
+	width: 700px;
+	padding: 30px;
+	overflow: hidden;
+}
+
+.create-box {
+	margin-bottom: 30px;
+}
+
+.create-content {
+	padding: 15px;
+	font-size: 16px;
+	color: #666;
+}
+
+.content-header {
+	width: 95px;
+	margin-bottom: 10px;
+}
+
+
+.class-option {
+	display: inline-block;
+	margin: 10px 10px 20px;
+}
+
+.class-option label {
+	cursor: pointer;
+}
+
+
+
+/* 辅助类 */
+.title {
+	color: #666;
+	font-size: 22px;
+	line-height: 36px;
+	border-left: 2px solid #efefef;
+	width: 242px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.table-box {
+	margin: 20px auto;
+	font-size: 15px;
+	border: 0.1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+	color: #666;
+	/* 背景色渐变 */
+	/* background: -webkit-linear-gradient(top, 
+	 	 rgba(45,55,128), rgba(45,55,128, 0.0));
+	 -webkit-background-clip: text;         规定背景的划分区域
+	 -webkit-text-fill-color: transparent;  */ /*防止字体颜色覆盖*/
+}
+
+
+.table-box th {
+	/*background-color: #fff;*/
+	height: 50px;
+	line-height: 50px;
+}
+
+
+.table-box td,th {
+	padding: 0 40px;
+	max-width: 100px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	/* 设置不会换行 */
+	white-space: nowrap;
+	/* 设置隐藏超出部分并显示... */
+	text-overflow: ellipsis;
+	border-collapse: collapse;
+	overflow: hidden;
+	border-bottom: 0.1px dashed rgba(74, 74, 74, 0.1);
+}
+
+/***************** 图标类 ********************/
+
+/* 添加图标 */
+.add-icon {
+	display: inline-block;
+	cursor: pointer;
+	float: right;
+	width: 22px;
+	height: 22px;
+	background: url('../images/add.png') -3px 1px no-repeat;
+	background-size: 22px;
+}
+
+
+/* 多选框按钮 */
+.checkbox-icon {
+	display: inline-block;
+	cursor: pointer;
+	margin-right: 5px;
+	float: left;
+	width: 24px;
+	height: 24px;
+	background: url('../images/Raidobox.png') -1px 0px no-repeat;
+	background-size: 24px;
+}
+
+.radio-icon {
+	display: inline-block;
+	margin-right: 5px;
+	float: left;
+	width: 24px;
+	height: 24px;
+	background: url('../images/Raidobox.png') -1px -2px no-repeat;
+	background-size: 24px;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+
+input:checked + .radio-icon {
+	background: url('../images/RaidoboxSelected.png') -1px -2px no-repeat;
+	background-size: 24px;
+}
+
+/* 多选框 */
+input:checked + .checkbox-icon {
+	background: url('../images/complete.png') -1px 0px no-repeat;
+	background-size: 24px;
+}

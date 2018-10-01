@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>资格认证</title>
+
+	<link rel="shortcut icon " type="images/x-icon" href="./favicon.ico">
+
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/tag.css">
+	<!--链入基本按钮库-->
+	<link rel="stylesheet" href="style/button.css">
+	<!--链入前台公共样式-->
+	<link rel="stylesheet" href="style/common.css">
+
+
+	<link rel="stylesheet" href="style/user_personal_common.css">
+	<link rel="stylesheet" href="style/user_certificate.css">
+
+	<script src="js/jquery.js"></script>
+	<script src="user_certificate.js"></script>
+
+
+
+</head>
+<body>
+
+	<div class="main">
+		<h3 class="title">身份认证</h3>
+		<form action="" >
+			<ul>
+
+				<li><label class="fix-label" for="txt1">真实姓名</label><input id="txt1" type="text" class="txt-in"></li>
+				<li><label class="fix-label" for="txt2">职业</label><input id="txt2" type="text" class="txt-in" value="老师" readonly="readonly"></li>
+				<li><label class="fix-label" for="txt3">认证信息</label><input id="txt3"  type="text" class="txt-in"></li>
+				<li><label class="fix-label" for="uploadInput">图片证明</label>
+					<input id="imgIn" type="hidden" name="img" >
+					<label for="uploadInput" class="file-lable"></label>
+				</li>
+
+			</ul>
+
+			<button class="btn btn-primary" type="submit">认证</button>
+		</form>
+		<form id="uploadform" method="post" enctype="multipart/form-data">
+			<input id="uploadInput"  type="file">
+		</form>
+
+
+		<div class="rcImg">
+			<img id="showImg" src="images/girl-bg.jpg" alt="...">
+		</div>
+	</div>
+
+
+</body>
+</html>

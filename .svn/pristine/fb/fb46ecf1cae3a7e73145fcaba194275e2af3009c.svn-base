@@ -1,0 +1,132 @@
+package cc.siriuscloud.dtxz.controller;
+
+import java.io.IOException;
+import java.io.Writer;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import cc.siriuscloud.dtxz.bean.User;
+import cc.siriuscloud.dtxz.service.UserService;
+
+/**
+ * @author sirius
+ * 前台的主入口，主要包括首页，登录和注册,发现
+ * 本来打算将注册和登录抽离到个人中心的
+ */
+@Controller
+public class IndexController {
+
+	@Autowired
+	private UserService userService;
+	
+	
+	
+	@RequestMapping("index")
+	public String index(){
+		
+		
+		
+		
+		return "index";
+	}
+	
+	/**
+	 * 登录、注册的视图
+	 * @return
+	 */
+	@RequestMapping("/loginUI.do")
+	public String loginUI(){
+		
+		return "loginUI";
+	}
+	
+	/**
+	 * 登陆检查
+	 * @return
+	 */
+	@RequestMapping("login")
+	public String login(User user,HttpSession session){
+		
+		User loginUser=userService.login(user);
+	
+		// 未找到用户
+		if(loginUser==null){
+			return "redirect:index.do";
+		}
+		session.setAttribute("loginUser", loginUser);
+		
+		return "redirect:index.do";
+	}
+	/**
+	 * 登陆检查
+	 * @return
+	 */
+	@RequestMapping("relogin")
+	public String relogin(HttpSession session){
+		
+		
+		session.setAttribute("loginUser", null);
+		return "redirect:loginUI.do";
+	}
+	
+	/**
+	 * 用户注册
+	 * @param user
+	 * @return
+	 * @throws IOException 
+	 */
+	@RequestMapping("register")
+	public String register(User user,RedirectAttributes attr) throws IOException{
+		
+		int row = userService.register(user);
+		
+		
+		if(row<0){
+			
+			attr.addAttribute("msg", "注册失败");			
+			return "<script>alert('注册成功');window.location.href='/index.do';</script>";
+		}
+		
+		
+		return "<script>alert('注册成功');window.location.href='/index.do';</script>";
+	}
+	
+	
+	/**
+	 * 发现
+	 * @return
+	 */
+	@RequestMapping("found")
+	public String found(RedirectAttributes attributes){
+		
+		attributes.addAttribute("msg", "此功能还在加工哦，宁耐片刻。啦啦啦！");
+		attributes.addAttribute("", "此功能还在加工哦，宁耐片刻。啦啦啦！");
+		
+		return "redirect:/error.do";
+	}
+	
+	
+	/**
+	 * 错误页面
+	 * @return
+	 */
+	@RequestMapping("error")
+	@ResponseBody
+	public String error(String msg,String url){
+		
+		String txt="alert('错误！"+msg+"');";
+		
+		if(url!=null&&url.length()>1){
+			txt=txt+"window.location.href='"+url+"';";
+		}
+		return "<script>"+txt+"</script>";
+	}	
+	
+}
+

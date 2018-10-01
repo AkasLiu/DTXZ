@@ -1,0 +1,19 @@
+package cc.siriuscloud.dtxz.dao;
+
+import cc.siriuscloud.dtxz.bean.Submit;
+
+public interface SubmitMapper {
+    int deleteByPrimaryKey(String submitId);
+
+    int insert(Submit record);
+
+    int insertSelective(Submit record);
+
+    Submit selectByPrimaryKey(String submitId);
+
+    int updateByPrimaryKeySelective(Submit record);
+
+    int updateByPrimaryKeyWithBLOBs(Submit record);
+
+    int updateByPrimaryKey(Submit record);
+}

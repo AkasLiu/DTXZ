@@ -1,0 +1,19 @@
+package cc.siriuscloud.dtxz.dao;
+
+import cc.siriuscloud.dtxz.bean.Exercise;
+
+public interface ExerciseMapper {
+    int deleteByPrimaryKey(String exerciseId);
+
+    int insert(Exercise record);
+
+    int insertSelective(Exercise record);
+
+    Exercise selectByPrimaryKey(String exerciseId);
+
+    int updateByPrimaryKeySelective(Exercise record);
+
+    int updateByPrimaryKeyWithBLOBs(Exercise record);
+
+    int updateByPrimaryKey(Exercise record);
+}

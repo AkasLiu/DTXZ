@@ -1,0 +1,379 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 12px/1.5 arial,STHeiti,'Microsoft YaHei',宋体;
+	background-color: #eee;;
+}
+
+a {
+	text-decoration: none;
+}
+
+.answer-sheet-box ul {
+	/* 默认隐藏 */
+	/*visibility: hidden;*/
+	display: none;
+	list-style-type: none; 
+}
+
+.answer-sheet-box ul li {
+	float: left;
+	margin: 20px 5px;
+}
+
+.card-unfold {
+	cursor: pointer;
+	/* 设置不可选择文字 */
+	/*user-select: none;*/
+}
+
+.card-unfold:hover {
+	color: #40b5bb;
+}
+
+.answer-sheet-box ul li a {
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	background-color: #A4A4A4;
+	border-radius: 4px;
+	/*box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);*/
+}
+
+.answer-sheet-box ul li a:hover {
+	background-color: #40b5ee;
+}
+
+
+.answer-sheet-box ul li .active {
+	background-color: #40b5ee;
+}
+
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.exam-box {
+	position: relative;
+	width: 960px;
+	/* 居中 */
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	border-radius: 10px;
+	box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.15);
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.exam-header {
+	width: 93%;
+	height: 30px;
+	padding: 10px 200px 10px 30px;
+	vertical-align: center;
+	font-size: 20px;
+	color: #fff;
+	background-color: #2d374b;
+}
+/*
+.create-header {
+	height: 50px;
+	vertical-align: center;
+	font-size: 18px;
+	color: #fff;
+	background-color: #2d374b;
+}
+*/
+.process {
+	display: inline-block;
+	margin: 10px 10px 0 0;
+	width: 650px;
+	height: 12px;
+	overflow: hidden;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+.process-bar {
+	float: left;
+	width: 20%;
+	height: 100%;
+	background-color: rgba(56, 186, 256, 0.9);
+}
+
+.process-time {
+	display: inline-block;
+	margin-left: 10px;
+	color: #fff;
+}
+/*
+.process-time .small-info {
+	margin-right: 10px;
+	font-size: 14px;
+}*/
+
+.ico-time-control {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	background: url("../images/ico-media.png") 0 -96px no-repeat;
+}
+
+/* 试题的类型 */
+.subject-title {
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	vertical-align: center;
+	border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
+}
+
+.subject-title i {
+	float: left;
+	display: block;
+	margin: 5px 8px 0 20px;
+	width: 30px;
+	height: 30px;
+	background: url("../images/question.png") no-repeat;
+	background-size: 30px;
+}
+
+/*.type-icon {
+	width: 32px;
+	height: 32px;
+	background: url("../images/question.png");
+}*/
+/*.create-icon {
+	display: inline-block;
+	float: left;
+	width: 32px;
+	height: 32px;
+	background: url('../images/create.png') 
+		0 0 no-repeat  !important;
+	background-size: 30px;
+}
+*/
+
+/* 问题框 */
+.exam-question-box {
+	padding: 24px;
+}
+/* 问题内容 */
+.exam-question-content {
+	padding-right: 80px;
+	font-size: 15px;
+	line-height: 25px;
+	letter-spacing: 0.5px;
+}
+
+.text-answer {
+	font-size: 16px;
+}
+
+/* 问题输入框 */
+.question-input {
+	margin: 10px auto;
+	padding: 15px;
+	width: 860px;
+	height: 80px;
+	min-width: 860px;
+	min-height: 80px;
+	border-radius: 10px;
+	max-width: 860px;
+	max-height: 80px;
+	/* 设置字体样式 */
+	font-size: 16px;
+	color: #666;
+	letter-spacing: 1px;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.exam-question-type {
+	margin: 10px;
+	text-align: center;
+}
+
+.type-box {
+	display: inline-block;
+	width: 75px;
+	margin: 0 10px;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+input[type='radio'] {
+	display: none;
+}
+
+input[type='checkbox'] {
+	display: none;
+}
+
+
+/* 选择题选项设计 */
+.select-answer-box {
+	margin: 20px;
+	font-size: 18px;
+	text-align: center;
+}
+
+.select-answer-box .text-box {
+	margin: 15px;
+}
+
+.select-answer-box input[type='text'] {
+	width: 600px;
+	padding: 5px 10px;
+	border-radius: 12px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 选择题答案 */
+
+.select-radio-answer, .select-checkbox-answer {
+	text-align: center;
+	font-size: 16px;
+}
+
+.answer-box {
+	display: inline-block;
+	width: 50px;
+	margin: 0 10px;
+}
+
+/* 这里是答卷的界面设计 */
+.exam-question-option {
+	margin: 20px 0;
+	padding: 10px 15px;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.exam-question-option:hover {
+	background-color: rgba(176,224,230, 0.5);
+	border-color: rgba(135,206,235, 0.5);
+}
+
+.exam-question-option input, label {
+	cursor: pointer;
+}
+
+/* 原来的单选框隐藏 */
+.exam-question-option input {
+	display: none;	
+}
+
+/* 多选框按钮 */
+.checkbox-icon {
+	display: inline-block;
+	margin-right: 5px;
+	float: left;
+	width: 24px;
+	height: 24px;
+	background: url('../images/Raidobox.png') -1px -2px no-repeat;
+	background-size: 24px;
+}
+
+.radio-icon {
+	display: inline-block;
+	margin-right: 5px;
+	float: left;
+	width: 24px;
+	height: 24px;
+	background: url('../images/Raidobox.png') -1px -2px no-repeat;
+	background-size: 24px;
+}
+
+
+input:checked + .radio-icon {
+	background: url('../images/RaidoboxSelected.png') -1px -2px no-repeat;
+	background-size: 24px;
+}
+
+/* 多选框 */
+input:checked + .checkbox-icon {
+	background: url('../images/complete.png') -1px -1px no-repeat;
+	background-size: 24px;
+}
+
+
+.form-box {
+	margin: 20px 10px 40px;
+}
+
+/* 设置创建考试时按钮盒子的样式 */
+.create-btn-box {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.create-btn-box button {
+	margin-right: 50px;
+	margin-left: 50px;
+}
+
+/* 默认按钮 */
+.btn {
+	display: inline-block;
+	margin: 5px 10px 30px;
+	/*padding: 10px;*/
+	cursor: pointer;
+	width: 120px;
+	height: 45px;
+	color: white;
+	border-radius: 8px;
+	border-color: 0.2px solid rgba(0, 0, 0, 0.2);
+	/*box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);*/
+}
+
+/* 按钮样式 */
+.red-btn {
+	background-color: rgba(255, 48, 48, 0.8);
+}
+
+.red-btn:hover {
+	background-color: rgba(255, 48, 28, 0.9);
+}
+
+.btn-blue {
+	background-color: #40b5ee;
+}
+
+.btn-blue:hover {
+	background-color: #10b5ff;
+}
+
+
+.answer-sheet-box {
+	padding-top: 20px;
+	border-top: 0.3px dashed rgba(0, 0, 0, 0.2);
+	font-size: 16px;
+	color: grey;
+}
+
+
+/* 收起图标 */
+.hidden-icon {
+	width: 31px;
+	padding: 32px;
+	background: url("../images/extend.png") 10px 30px no-repeat;
+	background-size: 20px;
+}

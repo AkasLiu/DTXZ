@@ -1,0 +1,321 @@
+
+
+
+/**
+ * 构建一个基本组件库
+ */
+
+
+
+
+
+/*********************************  标题标签类   ***************************/
+
+/*标题*/
+
+/*左边三像素边距*/
+h3.title{
+    color: #666;
+    font-size: 22px;
+    line-height: 36px;
+    border-left: 3px solid #ccc;
+    width: 242px;
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+
+
+
+
+/***************************** 表格 *****************************/
+
+
+
+/*带边框表格*/
+.table-box {
+    margin: 20px auto;
+    font-size: 15px;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
+    color: #666;
+    /* 背景色渐变 */
+    /* background: -webkit-linear-gradient(top,
+          rgba(45,55,128), rgba(45,55,128, 0.0));
+     -webkit-background-clip: text;         规定背景的划分区域
+     -webkit-text-fill-color: transparent;  */ /*防止字体颜色覆盖*/
+}
+
+
+.table-box th {
+    /*background-color: #fff;*/
+    height: 50px;
+    line-height: 50px;
+}
+
+
+.table-box td,.table-box th {
+    padding: 0 5px;
+
+    min-width: 6em;
+    max-width: 12em;
+
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+
+    /* 设置不会换行 */
+    white-space: nowrap;
+    /* 设置隐藏超出部分并显示... */
+    text-overflow: ellipsis;
+    border-collapse: collapse;
+
+    overflow: hidden;
+    border-bottom: 0.1px dashed rgba(74, 74, 74, 0.1);
+    _border-bottom-width:1px ;
+}
+
+.table-box tr:hover{
+
+
+    box-shadow: 2px 2px 3px #eee;
+}
+
+
+
+
+/***************** 输入组件 ********************/
+
+
+/* 添加图标 */
+.add-icon {
+    display: inline-block;
+    cursor: pointer;
+    float: right;
+    width: 22px;
+    height: 22px;
+    background: url('../images/add.png') -3px 1px no-repeat;
+    background-size: 22px;
+}
+
+
+/* 多选框按钮 */
+.checkbox-icon {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+    float: left;
+    width: 22px;
+    height: 22px;
+    background: url('../images/Raidobox.png') -1px 0px no-repeat;
+    background-size: 22px;
+}
+
+/*单选框*/
+.radio-icon {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+    float: left;
+    width: 22px;
+    height: 22px;
+    background: url('../images/Raidobox.png') -1px 0px no-repeat;
+    background-size: 22px;
+}
+
+
+input[type="checkbox"], input[type='radio'] {
+    display: none;
+}
+
+/*单选*/
+input:checked + .radio-icon {
+    background: url('../images/RaidoboxSelected.png') -1px 0 no-repeat;
+    background-size: 22px;
+}
+
+
+label.radio-txt{
+    cursor: pointer;
+    position: relative;
+
+    padding: 3px 16px 0 0;
+    display: inline-block;
+    float: left;
+}
+
+/*固定宽度的label*/
+label.fix-label{
+    display: inline-block;
+    min-width: 4em;
+    max-width: 8em;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+
+
+/* 多选框 */
+input:checked + .checkbox-icon {
+    background: url('../images/complete.png') -1px 0 no-repeat;
+    background-size: 22px;
+}
+
+
+/* 输入文本框 */
+input.txt-in[type="text"],input.txt-in[type="password"],input.txt-in[type="number"]{
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #666;
+    padding: 5px 10px;
+}
+
+input.txt-in[type="number"]{
+    text-align: right;
+    padding-right: 50px;
+
+}
+
+
+
+/*多行输入*/
+
+textarea{
+    font-size: 14px;
+    color: #666;
+
+    width: 300px;
+    padding: 10px;
+
+    resize: none;
+
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+/**************************** 按钮组合 **********************************88*/
+.more-btn-box {
+    text-align: center;
+}
+
+/* 灰色按钮 */
+.grey-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    margin-left: 15px;
+    color: white;
+    cursor: pointer;
+    /*width: 200px;*/
+    /*height: 40px;*/
+    border-style: none;
+    border-radius: 10px;
+    background-color: #666;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.grey-btn:hover {
+    background-color: #777;
+}
+
+.grey-btn:active {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* 更多按钮 */
+.greyblue-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 20px;
+    color: white;
+    cursor: pointer;
+    /*width: 200px;*/
+    /*height: 40px;*/
+    background-color: blue;
+    border-style: none;
+    border-radius: 20px;
+    background-color: #2d374b;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.greyblue-btn:hover {
+    color: white;
+}
+
+.greyblue-btn:active {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.myexam-btn:hover {
+    color: white;
+    background-color: rgb(45,55,128, 0.9);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/*模态框样式*/
+
+.cover-box{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, .5);
+    margin: 0 auto;
+    display: none;
+
+}
+
+.mod-box{
+    display: none;
+    margin: 20px auto;
+    box-shadow: 2px 2px 5px #999;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    max-width: 800px;
+    width: 368px;
+    position: relative;
+    background-color: #fff;
+}
+.mod-box .close-tip{
+    display: block;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+
+    background: url(../images/error-r-off.png) no-repeat;
+    background-size: 32px;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
+.mod-box h3{
+    color: #666;
+    text-align: center;
+    padding-left: 15px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    border-bottom: 1px solid #fafafa;
+}
+.mod-box .mess{
+    min-height: 146px;
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+}

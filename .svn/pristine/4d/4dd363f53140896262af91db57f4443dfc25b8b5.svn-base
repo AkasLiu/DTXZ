@@ -1,0 +1,190 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cc.siriuscloud.dtxz</groupId>
+  <artifactId>dtxz</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+ 
+ 
+ <properties>
+ 	<!-- 版本集中管理 -->		
+		<!-- 依赖 -->
+		<junit.version>4.12</junit.version>
+		<jstl.version>1.2</jstl.version>
+		<servlet.api.version>3.1.0</servlet.api.version>
+   		<mysql.connector.version>5.1.38</mysql.connector.version>
+
+			
+		<spring.version>4.2.8.RELEASE</spring.version>		
+		<pagehelper.version>5.0.0</pagehelper.version>
+		<mybatis.spring.version>1.3.0</mybatis.spring.version>
+		<mybatis.version>3.4.1</mybatis.version>	    
+   		<mybatis.paginator.version>1.2.17</mybatis.paginator.version>
+   		
+   		<aspectjweaver.version>1.8.10</aspectjweaver.version>
+	
+
+	    <log4j.version>1.2.17</log4j.version>
+	    <slf4j.version>1.7.21</slf4j.version>
+   	    <commons.fileupload.version>1.2.2</commons.fileupload.version>
+		
+		<!-- 插件 -->
+		<maven.compiler.version>3.5.1</maven.compiler.version>
+		<maven.war.version>2.6</maven.war.version>
+		<tomcat7.version>2.2</tomcat7.version>
+			<tomcat.config.jdk>1.8</tomcat.config.jdk>
+			<tomcat.config.url>http://localhost:8080/manager/text</tomcat.config.url>
+			<tomcat.config.username>tomcat</tomcat.config.username>
+			<tomcat.config.password>123456</tomcat.config.password>
+			<tomcat.config.port>8080</tomcat.config.port>
+			<tomcat.config.path>/</tomcat.config.path>
+ </properties>
+
+ <dependencies>
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>${junit.version}</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>${servlet.api.version}</version>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>${jstl.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>${mybatis.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>${mysql.connector.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>${log4j.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-log4j12</artifactId>
+	    <version>${slf4j.version}</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-test</artifactId>
+	    <version>${spring.version}</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	
+	
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis-spring</artifactId>
+	    <version>${mybatis.spring.version}</version>
+	</dependency>
+	 <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+	<dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>${commons.fileupload.version}</version>
+	</dependency>	
+	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjweaver</artifactId>
+	    <version>${aspectjweaver.version}</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>com.github.miemiedev</groupId>
+	    <artifactId>mybatis-paginator</artifactId>
+	    <version>${mybatis.paginator.version}</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper</artifactId>
+	    <version>${pagehelper.version}</version>
+	</dependency>
+
+	
+	
+ </dependencies>
+ 
+ 
+ 
+
+
+<!-- 插件 -->
+ <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.version}</version>
+        <configuration>
+          <source>${tomcat.config.jdk}</source>
+          <target>${tomcat.config.jdk}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+      	<!-- maven war 打包 -->
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven.war.version}</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+      
+	      <!-- tomcat -->
+      <!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
+	<plugin>
+	    <groupId>org.apache.tomcat.maven</groupId>
+	    <artifactId>tomcat7-maven-plugin</artifactId>
+	    <version>${tomcat7.version}</version>
+		<!-- tomcat config -->
+	    <configuration>
+	    	<uriEncoding>UTF-8</uriEncoding>
+	    	<port>${tomcat.config.port}</port>
+	    	<!-- 应用名,/忽略项目名 -->
+	    
+ 	 	    <url>${tomcat.config.url}</url>
+	    	<username>${tomcat.config.username}</username>
+	    	<password>${tomcat.config.password}</password>
+	    	<path>${tomcat.config.path}</path>
+	    </configuration>
+	</plugin>
+      
+   </plugins>
+</build>
+  
+</project>

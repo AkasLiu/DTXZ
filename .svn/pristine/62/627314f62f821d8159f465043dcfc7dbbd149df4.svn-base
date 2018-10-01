@@ -1,0 +1,32 @@
+注意：暂时先不用写跳转Js，等到时候与数据库交互的时候再后台实现分页
+				（避免一次性加载多页数据）
+
+引入头：
+<link rel="stylesheet" href="style/page.css">
+<link rel="stylesheet" href="style/base.css">
+<link rel="stylesheet" href="style/common.css">
+<script src="js/jquery.js"></script>
+<script src="js/page.js"></script>
+
+<script>
+	$('document').ready(function() {
+		// 分页初始化
+		var initPagefun = initPage;
+		initPagefun();
+	});
+</script>
+
+html直接复制即可（默认五个页码）
+
+
+默认：	居中 
+	选中样式.active：背景#00bc9b 边框：#00bc9b（修改颜色重写active类即可）
+	
+
+
+
+
+JS功能：当当前页第一页时禁用“上一页”和“首页”
+
+	
+组件作者：钟申根 丁度铭

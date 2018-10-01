@@ -1,0 +1,95 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>错题</title>
+	<!--图标-->	
+    <link rel="shortcut icon " type="images/x-icon" href="${pageContext.request.contextPath}/public/favicon.ico">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/style/exam_error_title.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/style/base.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/style/common.css">
+
+    <script src="${pageContext.request.contextPath}/public/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/public/js/exam_error_title.js"></script>
+    
+</head>
+<body>
+
+			<!---------------------------    头部  ------------------------------------>
+		<jsp:include page="${pageContext.request.contextPath}/WEB-INF/view/common/header.jsp"></jsp:include>
+
+	<div class="error_title_box">
+        <!-- 当前页面路径 -->
+        <div class="crumbs-path">
+            <a href="index.html">首页</a>
+            <span>></span>
+            <a href="exam_error_list.html">错题集</a>
+            <span>></span>
+            <span>错题</span>
+        </div>
+    
+        <!-- 错题显示 -->
+        <div class="normal-box">
+            <!-- 问题内容 -->
+            <div class="title-box">
+                <span class="green-pot"></span>
+                <span class="title-text">Validating 过滤器是（ ）</span>
+            </div>
+            <!-- 问题答案 -->
+            <div class="answer-box">
+                <span class="answer-text">
+                    正确答案: A C D
+                </span>
+                <span class="you-answer-text">
+                    你的答案: A B C
+                    <span class="error-text">（错误）</span>
+                </span>
+                <div class="exam-question-option">
+                    <span class="A-option option">A.</span>
+                    <span class="A-option-text">这是A选项</span>
+                </div>
+                <div class="exam-question-option correct">
+                    <span class="B-option option">B.</span>
+                    <span class="B-option-text">这是B选项</span>
+                </div>
+                <div class="exam-question-option error">
+                    <span class="C-option option">C.</span>
+                    <span class="C-option-text">这是C选项</span>
+                </div>
+                <div class="exam-question-option">
+                    <span class="D-option option">D.</span>
+                    <span class="D-option-text">这是D选项</span>
+                </div>
+    
+                <!-- 附加工具 -->
+                <div class="extra-tool">
+                    <li class="one-tool find-error-icon">纠错</li>
+                    <span class="right">|</span>
+                    <li class="one-tool collect-icon">收藏</li>
+                    <span class="right">|</span>
+                    
+                    <li class="one-tool solve-icon">求解答</li>
+                    <span class="right">|</span>
+                    <li class="one-tool note-icon">添加笔记</li>
+
+                </div>
+            </div>
+                        
+        </div>
+        <!-- 右侧悬浮栏 -->
+        <div class="pre-next-top-box">
+            <a id="last-problem" href="javascript:void(0);">上一题</a>
+            <a id="next-problem" href="javascript:void(0);">下一题</a>
+            <a id="back-to-top" href="javascript:;">返回顶部</a>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+	<!-- 尾部 -->
+	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/view/common/footer.jsp"></jsp:include>
+
+</body>
+</html>

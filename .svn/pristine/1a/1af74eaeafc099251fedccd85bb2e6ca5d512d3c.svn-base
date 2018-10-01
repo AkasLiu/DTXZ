@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+body{
+    background-color: #eee;
+}
+
+
+.main{
+    padding-top: 26px;
+
+}
+
+
+/****************************** 主内容右边 *********************************/
+.main>fl{
+    width: 706px;
+
+
+}
+.main>div>div{
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    padding-left: 20px;
+
+    background-color: #fff;
+}
+
+
+/*-----         快速导航        ----*/
+.main>.fl .quick-nav{
+    padding-top: 10px;
+    padding-left: 30px;
+    height: 90px;
+    width: 674px;
+
+    background-color: white;
+}
+.quick-nav ul>li{
+    float: left;
+
+    margin:0  20px;
+}
+
+
+.quick-nav ul>li>a {
+    display: table-cell;
+    height: 80px;
+    width: 68px;
+    vertical-align: bottom;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+}
+
+.quick-nav ul >li.quickexam a{
+    background: url(../images/quickexam-tip.png) no-repeat center 15px ;
+    background-size: 40px;
+}
+.quick-nav ul >li.shuati a {
+    background: url(../images/history-tip.png) no-repeat center 15px ;
+
+    background-size: 40px;
+}
+.quick-nav ul >li.myessay a {
+    background: url(../images/myessay-tip.png) no-repeat center 15px ;
+
+    background-size: 40px;
+}
+
+
+
+.quick-nav ul >li.history a{
+    background: url(../images/xuanti-tip.png) no-repeat center 15px ;
+
+    background-size: 40px;
+
+}
+
+
+/*问题求助*/
+.main>.fl .essay-box{
+    height: 365px;
+    background-color: white;
+}
+
+
+.main>.fl>div>h3{
+    padding: 6px 0 14px 0;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.essay-box .detail{
+    width: 570px;
+}
+
+
+.main>.fl .essay-box textarea{
+
+    display: block;
+    padding:5px;
+
+    width: 550px;
+    height: 140px;
+
+    border-radius: 4px;
+    outline: none;
+
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    resize: none;
+}
+.main>.fl .essay-box .imgupload{
+    margin-top: 20px;
+    width: 60px;
+    height: 60px;
+    background: url(../images/upload-bg.png) no-repeat 0 0;
+    background-size: 60px;
+    cursor: pointer;
+
+}
+
+.imgupload input[type="file"]{
+
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+
+}
+
+
+
+
+/*热门问题*/
+.main>.fl .hot-box{
+    height: 290px;
+
+    background-color: pink;
+
+}
+
+
+/*当前模考*/
+.main>.fl .curr-exam{
+    height: 340px;
+
+}
+
+.curr-exam .exam-list li{
+    float: left;
+    height: 210px;
+    width: 157px;
+
+    margin-right:10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.exam-list h4{
+
+    color: #333;
+    font-size: 15px;
+    line-height: 32px;
+    height: 32px;
+
+    padding: 16px 0;
+    text-align: center;
+    
+}
+
+.exam-list li>a{
+    margin: 0 auto;
+    width: 62px;
+    height: 62px;
+    background-color: white;
+    display: block;
+}
+
+.exam-list li img{
+    width: 60px;
+}
+
+.exam-list p{
+    text-align: center;
+    font-size: 14px;
+    line-height: 32px;
+}
+
+
+
+
+
+/****************************** 主内容左边 *********************************/
+
+.main>.fr{
+    width: 282px;
+}
+
+
+.main>.fr .weather-box{
+    height: 74px;
+
+
+    background-color: deeppink;
+}
+
+.main>.fr .info-box {
+    height: 470px;
+    background-color: deeppink;
+}
+

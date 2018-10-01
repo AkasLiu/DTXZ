@@ -1,0 +1,23 @@
+package cc.siriuscloud.dtxz.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/*
+ * @author Ace
+ * 通知页面的入口
+ * 
+ */
+@Controller
+@RequestMapping("notice")
+public class NoticeController {
+	
+	/**
+	 * 创建通知的视图
+	 * @return
+	 */
+	@RequestMapping("show") 
+	public String show(){
+		return "notice_show";
+	}
+}

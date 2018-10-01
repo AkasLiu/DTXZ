@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.UserClazzMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.UserClazz" >
+    <id column="uc_id" property="ucId" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="clazz_id" property="clazzId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    uc_id, user_id, clazz_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dtxz_user_clazz
+    where uc_id = #{ucId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_user_clazz
+    where uc_id = #{ucId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.UserClazz" >
+    insert into dtxz_user_clazz (uc_id, user_id, clazz_id
+      )
+    values (#{ucId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{clazzId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.UserClazz" >
+    insert into dtxz_user_clazz
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ucId != null" >
+        uc_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="clazzId != null" >
+        clazz_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ucId != null" >
+        #{ucId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="clazzId != null" >
+        #{clazzId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.UserClazz" >
+    update dtxz_user_clazz
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="clazzId != null" >
+        clazz_id = #{clazzId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where uc_id = #{ucId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.UserClazz" >
+    update dtxz_user_clazz
+    set user_id = #{userId,jdbcType=VARCHAR},
+      clazz_id = #{clazzId,jdbcType=VARCHAR}
+    where uc_id = #{ucId,jdbcType=VARCHAR}
+  </update>
+</mapper>

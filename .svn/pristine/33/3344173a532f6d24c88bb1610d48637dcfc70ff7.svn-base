@@ -1,0 +1,17 @@
+package cc.siriuscloud.dtxz.dao;
+
+import cc.siriuscloud.dtxz.bean.Exampaper;
+
+public interface ExampaperMapper {
+    int deleteByPrimaryKey(String epId);
+
+    int insert(Exampaper record);
+
+    int insertSelective(Exampaper record);
+
+    Exampaper selectByPrimaryKey(String epId);
+
+    int updateByPrimaryKeySelective(Exampaper record);
+
+    int updateByPrimaryKey(Exampaper record);
+}

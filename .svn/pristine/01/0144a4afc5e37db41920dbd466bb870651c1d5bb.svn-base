@@ -1,0 +1,14 @@
+package cc.siriuscloud.dtxz.bean.vo;
+
+import cc.siriuscloud.dtxz.bean.User;
+
+/**
+ * @author sirius
+ * 对于User的扩展，这里主要是存放一对多，一对一，等bean集合。
+ */
+public class UserVo extends User {
+
+	
+	
+	
+}

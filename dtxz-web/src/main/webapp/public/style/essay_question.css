@@ -1,0 +1,148 @@
+.wrap .container{
+	/*height: 100px;
+	background: red;*/
+	margin-top: 20px;
+}
+
+.question_left{
+	width: 676px;
+	padding: 0px 15px;
+	float: left;
+	background-color: #FFFFFF;
+	margin-bottom: 20px;
+	/*margin-top: 150px;*/
+	/*background: red;*/
+}
+
+.question_right{
+	width: 282px;
+	height: 500px;
+	float: right;
+	/*margin-top: 150px;*/
+	/*background: blue;*/
+}
+
+.question_left .question_list{
+	height: 46px;
+	padding: 10px 0px;
+	border-bottom: 1px solid gray;
+	/*background: gold;*/
+}
+
+.question_list .answer{
+	/*display: inline-block;*/
+	float: left;
+	width: 46px;
+	height: 46px;
+    color: #fff;
+    border-radius: 1px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.75;
+}
+
+.null{
+	background-color: #AD3A37;
+}
+
+.exist{
+	background-color: #009a61;
+}
+
+.question_list .summary{
+	float: left;
+	width: 	600px;
+	height: 50px;
+	margin-left: 25px;
+	/*background: gold;*/
+}
+
+.summary .author{
+	margin-bottom: 5px;
+}
+
+.summary .title span{
+	font-size: 16px;
+	color: #ff8a00;
+}
+
+.summary .title span i{
+	display: inline-block;
+	width:20px;
+	height: 22px;
+	position: relative;
+	top:1px;
+	/*font-size: 12px;*/
+	
+	background: url(../images/money.png) no-repeat -3px 4px;
+	background-size: 23px;
+}
+
+.summary .title a{
+	font-size: 16px;
+}
+
+.summary a:hover{
+	color: #25bb9b;
+	/*text-decoration: underline;*/
+}
+
+.alert{
+	/*display: inline-block;*/
+	/*width:160px;
+	height: 324px;*/
+	/*margin-bottom: 20px;*/
+	padding: 15px;
+	/*background-color: #fcf8e3;*/
+	background-color:#f0f0f0;
+	border-radius: 4px;
+	border: 1px solid #fbeed5;
+/*	width: 30px;    */
+	color: #8a6d3b;
+    /*margin: ;*/    
+    line-height: 24px; 
+	/*writing-mode: vertical-lr;*/
+	letter-spacing:4px;
+	position:fixed;
+	top:140px;
+	left: 0px;
+    /*font-size: 20px; */
+}
+
+/*.alert p{
+	color: #8a6d3b;
+	font-size: 14px;
+	width: 20px;    
+    margin: 0 auto;  
+    height: 324px;  
+    line-height: 24px;    
+}*/
+
+.alert a{
+	/*display: block;
+	width:205px;
+	height: 20px;*/
+	display: block;
+	padding: 6px 12px;
+	margin-top: 10px;
+	border-color: #008151;
+	color: #fff;
+	text-align: center;
+	border: 1px solid transparent;
+	font-size: 14px;
+	background-color:#009a61;
+	width: 20px;    
+    margin: 0 auto;    
+    line-height: 24px; 
+  /*  writing-mode: vertical-lr;*/
+}
+
+.alert a:hover{
+	background-color:#25bb9b;
+}
+
+
+.last{
+	margin-bottom: 20px;
+}
+

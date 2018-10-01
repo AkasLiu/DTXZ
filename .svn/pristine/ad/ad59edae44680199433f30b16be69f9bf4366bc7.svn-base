@@ -1,0 +1,14 @@
+
+
+
+//初始化标题导航
+(function(){
+    $('.nav-list li').click(function(){
+
+        $('.nav-list li').removeClass('active');
+
+        $(this).addClass('active');
+
+
+    });
+})();

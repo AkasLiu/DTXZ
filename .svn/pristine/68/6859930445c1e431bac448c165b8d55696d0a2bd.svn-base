@@ -1,0 +1,231 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #fafafa;
+}
+
+/* 我的风格的盒子 */
+.dute-box {
+	border-radius: 10px;
+	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+/* 这里放置图标类 */
+.user-icon {
+	display: inline-block;
+	margin: 13px 8px 0 100px;
+	width: 30px;
+	height: 30px;
+	background: url("../images/user.png") no-repeat;
+	background-size: 30px;
+}
+
+.register-icon {
+	display: inline-block;
+	margin: 13px 8px 0 100px;
+	width: 30px;
+	height: 30px;
+	background: url("../images/register.png") no-repeat;
+	background-size: 30px;
+}
+
+.icon-remember {
+	display: inline-block;
+	margin-left: 40px;
+	margin-bottom: 10px;
+	width: 30px;
+	height: 30px;
+	background: url("../images/checkbox.png") 3px 3px no-repeat;
+	background-size: 24px;
+}
+
+
+/* 这里放置实体类 */
+.contain-box {
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 80px;
+	width: 600px;
+	/*height: 900px;*/
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.box-header {
+	height: 60px;
+	/* 61 68 76*/
+	background-color: #2d374b;
+	border-bottom: 0.2px dashed  rgba(0, 0, 0, 0.1);
+}
+
+.login-header, .register-header {
+	width: 50%;
+	height: 100%;
+	cursor: pointer;
+	line-height: 60px;
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+}
+
+/* 选中的头的标识 */
+.sel-header {
+	background-color: rgba(60, 80, 120, 0.6);
+}
+
+
+.box-content{
+	padding: 30px;
+	text-align: center;
+	/*设置字体样式*/
+	font-size: 16px;
+	letter-spacing: 2px;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.login-box {
+	/*background-color: rgba(0, 0, 0, 0.2);*/
+	padding-right: 25px;
+}
+
+.register-box {
+	/* 默认隐藏 */
+	display: none;
+}
+
+/* 定义表单行的样式 */
+.form-line {
+	position: relative;
+	margin-right: 40px;
+}
+
+.box-content input {
+	margin: 20px 20px;
+	padding: 5px 15px;
+	width: 300px;
+	height: 20px;
+	color: rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	outline: none;
+	letter-spacing: 2px;
+	/* 输入正确的颜色 */
+	/*border-color: lightgreen;*/
+	/* 输入错误的颜色 */
+	/*border-color: rgba(230, 0, 0, 0.4);*/
+	border-color: rgba(0, 0, 0, 0.2);
+	border-style: double;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);	
+}
+
+/* 记住密码框(隐藏) */
+#remember-pwd {
+	display: none;
+}
+#remember-pwd:checked + .icon-remember {
+	background-image: url('../images/checkbox-selected.png');
+}
+/* 底部记住忘记密码框 */
+.rem-box {
+	margin-top: 15px;
+	margin-right: 64px;
+	width: 360px;
+}
+.rem-box label, a{
+	cursor: pointer;
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.5);
+	line-height: 30px;
+}
+
+.rem-box a:hover {
+	color: skyblue;
+}
+
+/* 提交框 */
+.sub-box {
+	margin-top: -10px;
+	width: 380px;
+}
+
+
+.input-border {
+	border-color: skyblue !important;
+}
+
+.error-border {
+	border-color: rgba(230, 0, 0, 0.5) !important;
+}
+
+.right-border {
+	border-color: lightgreen !important;
+}
+
+
+.box-content input[type="submit"] {
+	color: white;
+	cursor: pointer;
+	width: 100px;
+	height: 40px;
+	/*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);*/
+	/*border-style: none;*/
+	/*border-color: rgba(0, 0, 0, 0.1);*/
+	outline: none;
+	border-style: none;
+	background-color: #2d374b;
+	/*background-color: rgba(0, 0, 0, 0.4);*/
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);	
+}
+
+.box-content input[type="submit"]:active{
+	/*background-color: rgba(0, 0, 0, 0.3);*/
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);	
+}
+
+.info {
+	/* 使用绝对定位 */
+	position: absolute;
+	font-size: 13px;
+	color: rgba(230, 0, 0, 0.7);
+}
+
+/* 登录框校验消息 */
+.mail-info {
+	left: 67px;
+	bottom: -12px;
+}
+
+/* 密码框提示信息 */
+.pwd-info {
+	left: 67px;
+	bottom: -12px;
+}
+
+/* 重复输入密码的提示信息 */
+.again-pwd-info {
+	left: 100px;
+	bottom: -12px;
+}
+
+
+.name-info {
+	left: 84px;
+	bottom: -12px;
+}
+
+
+

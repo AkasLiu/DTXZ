@@ -1,0 +1,17 @@
+package cc.siriuscloud.dtxz.dao;
+
+import cc.siriuscloud.dtxz.bean.Problem;
+
+public interface ProblemMapper {
+    int deleteByPrimaryKey(String probId);
+
+    int insert(Problem record);
+
+    int insertSelective(Problem record);
+
+    Problem selectByPrimaryKey(String probId);
+
+    int updateByPrimaryKeySelective(Problem record);
+
+    int updateByPrimaryKey(Problem record);
+}

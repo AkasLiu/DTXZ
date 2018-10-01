@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.PvMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.Pv" >
+    <id column="pv_id" property="pvId" jdbcType="VARCHAR" />
+    <result column="hour" property="hour" jdbcType="TIMESTAMP" />
+    <result column="pv" property="pv" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    pv_id, hour, pv
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dtxz_pv
+    where pv_id = #{pvId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_pv
+    where pv_id = #{pvId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.Pv" >
+    insert into dtxz_pv (pv_id, hour, pv
+      )
+    values (#{pvId,jdbcType=VARCHAR}, #{hour,jdbcType=TIMESTAMP}, #{pv,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.Pv" >
+    insert into dtxz_pv
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pvId != null" >
+        pv_id,
+      </if>
+      <if test="hour != null" >
+        hour,
+      </if>
+      <if test="pv != null" >
+        pv,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pvId != null" >
+        #{pvId,jdbcType=VARCHAR},
+      </if>
+      <if test="hour != null" >
+        #{hour,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pv != null" >
+        #{pv,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.Pv" >
+    update dtxz_pv
+    <set >
+      <if test="hour != null" >
+        hour = #{hour,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pv != null" >
+        pv = #{pv,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where pv_id = #{pvId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.Pv" >
+    update dtxz_pv
+    set hour = #{hour,jdbcType=TIMESTAMP},
+      pv = #{pv,jdbcType=VARCHAR}
+    where pv_id = #{pvId,jdbcType=VARCHAR}
+  </update>
+</mapper>

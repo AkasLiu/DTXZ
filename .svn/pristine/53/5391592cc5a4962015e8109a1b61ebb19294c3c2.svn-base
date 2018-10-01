@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>支付页面</title>	
+		
+		<link rel="stylesheet" href="style/finance_recharge.css" />
+		
+	</head>
+	<body>
+		
+		<div class = "box">
+			<ul>
+				<li><a href = "javascript:void(0);"><img src="images/alipay-paytitle.png" /></a></li>
+				<li><a href = "javascript:void(0);"><img src="images/wechat-paytitle.png" /></a></li>
+				<li><a href = "javascript:void(0);"><img src="images/QQ-paytitle.png" /></a></li>
+			</ul>
+			
+			<div class = "divContain">
+				<div class = "contain">
+					<p class = "title">选择充值金额</p>
+					<p>
+						<button>￥10元</button>
+						<button>￥20元</button>
+						<button>￥50元</button>
+						<button>￥100元</button>
+					</p>
+					<p class = "QRcode"><img src="images/alipayQRcode.jpg" /></p>
+				</div>
+			</div>
+			<div class = "divContain">
+				<div class = "contain">
+					<p class = "title">选择充值金额</p>
+					<p>
+						<button>￥10元</button>
+						<button>￥20元</button>
+						<button>￥50元</button>
+						<button>￥100元</button>
+					</p>
+					<p class = "QRcode"><img src="images/wechatQRcode.jpg" /></p>
+				</div>
+			</div>
+			<div class = "divContain">
+				<div class = "contain">
+					<p class = "title">选择充值金额</p>
+					<p>
+						<button>￥10元</button>
+						<button>￥20元</button>
+						<button>￥50元</button>
+						<button>￥100元</button>
+					</p>
+					<p class = "QRcode"><img src="images/wechatQRcode.jpg" /></p>
+				</div>
+			</div>
+		<div>
+			
+		<script type="text/javascript" src="js/jquery.js" ></script>					
+		<script type="text/javascript" src="js/finance_recharge.js" ></script>
+		
+	</body>
+</html>

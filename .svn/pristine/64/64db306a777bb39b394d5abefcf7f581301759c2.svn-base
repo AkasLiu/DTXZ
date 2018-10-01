@@ -1,0 +1,377 @@
+@charset "UTF-8";
+
+body{
+    background-color: #eee;
+}
+
+
+.main{
+    padding-top: 26px;
+
+}
+
+
+/****************************** 主内容右边 *********************************/
+.main>fl{
+    width: 706px;
+
+
+}
+.main>div>div{
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    padding-left: 20px;
+
+    background-color: #fff;
+}
+
+
+/*-----         快速导航        ----*/
+.main>.fl .quick-nav{
+    padding-top: 10px;
+    padding-left: 30px;
+    height: 90px;
+    width: 674px;
+
+    background-color: white;
+}
+.quick-nav ul>li{
+    float: left;
+
+    margin:0  20px;
+}
+
+
+.quick-nav ul>li>a {
+    display: table-cell;
+    height: 80px;
+    width: 68px;
+    vertical-align: bottom;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+}
+
+.quick-nav ul >li.quickexam a{
+    background: url(../images/quickexam-tip.png) no-repeat center 15px ;
+    background-size: 40px;
+}
+.quick-nav ul >li.shuati a {
+    background: url(../images/history-tip.png) no-repeat center 15px ;
+
+    background-size: 40px;
+}
+.quick-nav ul >li.myessay a {
+    background: url(../images/myessay-tip.png) no-repeat center 15px ;
+
+    background-size: 40px;
+}
+
+
+
+.quick-nav ul >li.history a{
+    background: url(../images/xuanti-tip.png) no-repeat center 15px ;
+
+    background-size: 40px;
+
+}
+
+
+/*问题求助*/
+.main>.fl .essay-box{
+    height: 365px;
+    background-color: white;
+}
+
+
+.main>.fl>div>h3{
+    padding: 6px 0 14px 0;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.essay-box .detail{
+    width: 570px;
+}
+
+
+.main>.fl .essay-box textarea{
+
+    display: block;
+    padding:5px;
+
+    width: 550px;
+    height: 140px;
+
+    border-radius: 4px;
+    outline: none;
+
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    resize: none;
+}
+.main>.fl .essay-box .imgupload{
+    margin-top: 20px;
+    width: 60px;
+    height: 60px;
+    background: url(../images/upload-bg.png) no-repeat 0 0;
+    background-size: 60px;
+    cursor: pointer;
+
+}
+
+.imgupload input[type="file"]{
+
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+
+}
+
+
+
+
+/*热门问题*/
+.main>.fl .hot-box{
+    height: 290px;
+
+    background-color: pink;
+
+}
+
+
+/*当前模考*/
+.main>.fl .curr-exam{
+    height: 340px;
+    position: relative;
+
+}
+
+.curr-exam .exam-list{
+    width: 666px;
+    height: 218px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.curr-exam .exam-list ul{
+    width: 5000px!important;
+    height: 220px;
+}
+
+
+.curr-exam .exam-list li{
+    float: left;
+    height: 210px;
+    width: 157px;
+
+    margin-right: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.exam-list h4{
+
+    color: #333;
+    font-size: 15px;
+    line-height: 32px;
+    height: 32px;
+
+    padding: 16px 0;
+    text-align: center;
+    
+}
+
+.exam-list .headimg{
+    height: 60px;
+    width: 60px;
+
+    text-align: center;
+}
+
+
+.exam-list li>a{
+    margin: 0 auto;
+
+    background-color: white;
+    display: block;
+}
+
+.exam-list li img{
+    width: 60px;
+}
+
+.exam-list p{
+    text-align: center;
+    font-size: 14px;
+    line-height: 32px;
+}
+
+
+/*左右滑动*/
+.listgo{
+    position: absolute;
+
+    height: 32px;
+    width: 32px;
+    top: 160px;
+    background: url(../images/left-right-out.png) no-repeat;
+    background-size: 32px;
+}
+
+.listgo:hover {
+    background: url(../images/left-right.png) no-repeat;
+    background-size: 32px;
+}
+#goleft{
+    left: -2px;
+
+}
+#goright{
+    right:2px;
+}
+
+.flipx {
+    -moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+
+}
+
+
+/****************************** 主内容左边 *********************************/
+
+.main>.fr{
+    width: 282px;
+}
+
+
+/*天气框*/
+.main>.fr .weather-box{
+    height: 74px;
+
+}
+
+.main>.fr .weather-box img{
+    float: left;
+    padding: 5px;
+    margin-right: 10px;
+}
+.main>.fr .weather-box span{
+
+    font-size: 24px;
+    line-height: 46px;
+    font-weight: 800;
+
+}
+
+.main>.fr .weather-box p{
+
+    font-size: 14px;
+}
+
+
+
+
+
+.main>.fr .info-box {
+    padding-top: 50px;
+    padding-left: 0;
+
+
+}
+.info-box .headimg{
+    margin: 0 auto;
+}
+
+.info-box a.nikename{
+
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 500;
+}
+
+.info-box .nikename i{
+    display: inline-block;
+
+    position: relative;
+    top: 2px;
+
+    width: 16px;
+    height: 16px;
+    
+}
+
+.info-box .nikename .female-tip{
+    background: url(../images/icon-sex.png);
+    background-size: 16px;
+    
+}
+.info-box .nikename .male-tip{
+    background: url(../images/icon-sex.png);
+    background-size: 16px;
+
+}
+
+.info-box .profile-box{
+    line-height: 28px;
+}
+
+.info-box .profile-box span{
+    display: inline-block;
+    width: 86px;
+    text-align: center;
+}
+.info-box .profile-box strong{
+    font-weight: normal;
+
+    width: 0;
+    height: 12px;
+    border:1px solid #999;
+
+
+}
+
+.info-box .mess-box {
+    background-color: #ededed;
+    height: 60px;
+    padding-top: 5px;
+
+}
+
+.mess-box>li{
+    float: left;
+}
+
+.mess-box>li p{
+    width: 70px;
+    line-height: 30px;
+    text-align: center;
+
+}
+.info-box .chengjibang{
+    padding: 20px 0 30px 0;
+}
+
+
+.info-box .chengjibang li a{
+    line-height: 32px;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.info-box .chengjibang li a span{
+    font-style: italic;
+    font-weight: 800;
+    margin-right: 10px;
+    color: #5bc0de;
+
+}

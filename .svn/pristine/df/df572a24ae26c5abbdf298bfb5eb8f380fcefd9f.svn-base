@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+
+
+.main{
+
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background: url(../images/repeat_bg_y.png) repeat-y;
+    background-size: 1310px;
+    border:1px solid #e0e0e0;
+    border-radius: 3px;
+
+    height: 800px;
+    overflow: hidden;
+
+}
+.main .menu{
+    width: 201px;
+}
+
+
+.main .menu dt{
+    position: relative;
+
+
+}
+.main .menu  h3{
+
+    padding-left: 14px;
+    font-size: 16px;
+    line-height: 50px;
+    font-weight: 600;
+    border-bottom: 2px dashed  #ccc;
+}
+
+.main .menu dd{
+    display: block;
+
+
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+
+    border-left: 3px solid transparent;
+
+    padding-left: 22px;
+
+    font-size: 16px;
+    color: #333;
+}
+.main .menu dd:hover{
+
+    border-left-color: #2c83d8;
+    background-color: rgba(50, 50, 50,.1);
+}
+
+.main .menu dd.active{
+    font-weight: 600;
+    border-left-color: #2c83d8;
+    background-color: #fafafa;
+
+}
+
+/*模糊毛玻璃*/
+.blur{
+
+    -webkit-filter: blur(5px);/* Chrome,Opera*/
+    -moz-filter:blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+
+/********************右边的主内容*****************/
+
+iframe{
+    width: 799px;
+    height: 800px;
+}

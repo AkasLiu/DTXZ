@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" href="style/news.css" />
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		
+	</head>
+	<body>		
+		<div class = "news_box">			
+			<div class = "news_contain">
+				<span><img src="images/news-img.png"/>通知</span>
+				<ul>				
+					<li>
+						<a class = "list-head" href = "javascript:void(0);">
+							<img alt = "头像" src = "images/news.png"/>
+						</a>
+						<div class = "tooltip">
+							<div class = "tooltip_arrow"></div>
+							<div class = "tooltip_inner">
+								<div class = "chat-title">
+									恭喜你！注册成功！ ---1
+								</div>
+								<div class = "letter-info">
+									<p class = "letter-time">今天 18:22</p>
+									<p class = "delete-letter"><a href = "javascript:void(0);" class = "delete">删除</a><p>
+								</div>
+							</div>
+						</div>
+						
+						<div class = "chat-contain">
+							<p class = "contain-p">
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+							</p>
+						</div>
+						
+					</li>
+					<li>
+						<a class = "list-head" href = "javascript:void(0);">
+							<img alt = "头像" src = "images/news.png"/>
+						</a>
+						<div class = "tooltip">
+							<div class = "tooltip_arrow"></div>
+							<div class = "tooltip_inner">
+								<div class = "chat-title">
+									恭喜你！注册成功！ ---2
+								</div>
+								<div class = "letter-info">
+									<p class = "letter-time">今天 18:22</p>
+									<p class = "delete-letter"><a href = "javascript:void(0);" class = "delete">删除</a><p>
+								</div>
+							</div>
+						</div>
+						
+						<div class = "chat-contain">
+							<p class = "contain-p">
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+							</p>
+						</div>
+						
+					</li>		
+					<li>
+						<a class = "list-head" href = "javascript:void(0);">
+							<img alt = "头像" src = "images/news.png"/>
+						</a>
+						<div class = "tooltip">
+							<div class = "tooltip_arrow"></div>
+							<div class = "tooltip_inner">
+								<div class = "chat-title">
+									恭喜你！注册成功！ ---3
+								</div>
+								<div class = "letter-info">
+									<p class = "letter-time">今天 18:22</p>
+									<p class = "delete-letter"><a href = "javascript:void(0);" class = "delete">删除</a><p>
+								</div>
+							</div>
+						</div>
+						
+						<div class = "chat-contain">
+							<p class = "contain-p">
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+							</p>
+						</div>
+						
+					</li>	
+					<li>
+						<a class = "list-head" href = "javascript:void(0);">
+							<img alt = "头像" src = "images/news.png"/>
+						</a>
+						<div class = "tooltip">
+							<div class = "tooltip_arrow"></div>
+							<div class = "tooltip_inner">
+								<div class = "chat-title">
+									恭喜你！注册成功！ ---4
+								</div>
+								<div class = "letter-info">
+									<p class = "letter-time">今天 18:22</p>
+									<p class = "delete-letter"><a href = "javascript:void(0);" class = "delete">删除</a><p>
+								</div>
+							</div>
+						</div>
+						
+						<div class = "chat-contain">
+							<p class = "contain-p">
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+							</p>
+						</div>
+						
+					</li>	
+				</ul>	
+			</div>
+			
+		</div>
+		<script type="text/javascript" src="js/news.js" ></script>
+
+	</body>
+</html>

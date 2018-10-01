@@ -1,0 +1,359 @@
+/*==============================================================*/
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:     2017/12/30 21:27:31                          */
+/*==============================================================*/
+
+
+drop table if exists comment;
+
+drop table if exists dxtz_Submit;
+
+drop table if exists dxtz_admin;
+
+drop table if exists dxtz_answer;
+
+drop table if exists dxtz_authen;
+
+drop table if exists dxtz_bill;
+
+drop table if exists dxtz_class;
+
+drop table if exists dxtz_exam;
+
+drop table if exists dxtz_exampaper;
+
+drop table if exists dxtz_exercise;
+
+drop table if exists dxtz_message;
+
+drop table if exists dxtz_paper_exe;
+
+drop table if exists dxtz_power;
+
+drop table if exists dxtz_problem;
+
+drop table if exists dxtz_pv;
+
+drop table if exists dxtz_receive;
+
+drop table if exists dxtz_role;
+
+drop table if exists dxtz_user;
+
+drop table if exists dxtz_user_class;
+
+/*==============================================================*/
+/* Table: comment                                               */
+/*==============================================================*/
+create table comment
+(
+   comment_id           varchar(32) not null,
+   content              varchar(255) not null,
+   pub_time             datetime not null,
+   status               varchar(16),
+   user_id              varchar(32) not null,
+   answer_id            varchar(32) not null,
+   primary key (comment_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_Submit                                           */
+/*==============================================================*/
+create table dxtz_Submit
+(
+   submit_id            varchar(32) not null,
+   exercise_id          varchar(32) not null,
+   answer               text,
+   examinee_id          varchar(32) not null,
+   primary key (submit_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_admin                                            */
+/*==============================================================*/
+create table dxtz_admin
+(
+   admin_id             varchar(32) not null,
+   account              varchar(32) not null,
+   pwd                  varchar(32) not null,
+   role_id              varchar(32) not null,
+   primary key (admin_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_answer                                           */
+/*==============================================================*/
+create table dxtz_answer
+(
+   answer_id            varchar(32) not null,
+   title                varchar(100),
+   content              varchar(255) not null,
+   praise_count         int(50) not null default 0,
+   pub_time             datetime not null,
+   status               varchar(16),
+   user_id              varchar(32) not null,
+   prob_id              varchar(32) not null,
+   primary key (answer_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_authen                                           */
+/*==============================================================*/
+create table dxtz_authen
+(
+   authen_id            varchar(32) not null,
+   user_id              varchar(32) not null,
+   info                 varchar(255) not null,
+   title                varchar(64) not null,
+   img                  varchar(255) not null,
+   primary key (authen_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_bill                                             */
+/*==============================================================*/
+create table dxtz_bill
+(
+   bill_id              varchar(32) not null,
+   cost                 double not null default 0,
+   spender_id           varchar(32) not null,
+   payee_id             varchar(32) not null,
+   primary key (bill_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_class                                            */
+/*==============================================================*/
+create table dxtz_class
+(
+   class_id             varchar(32) not null,
+   name                 varchar(50) not null,
+   teacher_id           varchar(32) not null,
+   description          varchar(255),
+   primary key (class_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_exam                                             */
+/*==============================================================*/
+create table dxtz_exam
+(
+   exam_id              varchar(32) not null,
+   title                varchar(501) not null,
+   status               varchar(16),
+   createtime           datetime not null,
+   begintime            datetime not null,
+   duration             time not null,
+   class_id             varchar(32) not null,
+   ep_id                varchar(32) not null,
+   primary key (exam_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_exampaper                                        */
+/*==============================================================*/
+create table dxtz_exampaper
+(
+   ep_id                varchar(32) not null,
+   title                varchar(64) not null,
+   description          varchar(255),
+   teacher_id           varchar(32) not null,
+   primary key (ep_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_exercise                                         */
+/*==============================================================*/
+create table dxtz_exercise
+(
+   exercise_id          varchar(32) not null,
+   title                varchar(64) not null,
+   description          varchar(255) not null,
+   answer               text not null,
+   type                 varchar(10) not null,
+   writer_id            varchar(32) not null,
+   primary key (exercise_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_message                                          */
+/*==============================================================*/
+create table dxtz_message
+(
+   mes_id               varchar(32) not null,
+   content              varchar(255) not null,
+   primary key (mes_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_paper_exe                                        */
+/*==============================================================*/
+create table dxtz_paper_exe
+(
+   pe_id                varchar(32) not null,
+   ep_id                varchar(32) not null,
+   exercise_id          varchar(32) not null,
+   primary key (pe_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_power                                            */
+/*==============================================================*/
+create table dxtz_power
+(
+   power_id             varchar(32) not null,
+   rank                 varchar(50) not null,
+   src                  varchar(255) not null,
+   parent_id            varchar(32),
+   primary key (power_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_problem                                          */
+/*==============================================================*/
+create table dxtz_problem
+(
+   prob_id              varchar(32) not null,
+   title                varchar(100) not null,
+   content              varchar(255) not null,
+   type                 varchar(16),
+   pub_time             datetime not null,
+   count                int(10) not null default 0,
+   user_id              varchar(32) not null,
+   primary key (prob_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_pv                                               */
+/*==============================================================*/
+create table dxtz_pv
+(
+   pv_id                varchar(32) not null,
+   hour                 datetime not null,
+   pv                   varchar(32) not null,
+   primary key (pv_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_receive                                          */
+/*==============================================================*/
+create table dxtz_receive
+(
+   rec_id               varchar(32) not null,
+   user_id              varchar(32) not null,
+   mes_id               varchar(32) not null,
+   primary key (rec_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_role                                             */
+/*==============================================================*/
+create table dxtz_role
+(
+   role_id              varchar(32) not null,
+   name                 varchar(32) not null,
+   power                varchar(255) not null,
+   primary key (role_id)
+);
+
+/*==============================================================*/
+/* Table: dxtz_user                                             */
+/*==============================================================*/
+create table dxtz_user
+(
+   user_id              varchar(32) not null,
+   nickname             varchar(10) not null,
+   email                varchar(50) not null,
+   pwd                  varchar(50) not null,
+   sex                  varchar(4),
+   name                 varchar(10),
+   age                  int(10),
+   job                  varchar(50),
+   rank                 varchar(50),
+   img                  varchar(255),
+   signature            varchar(255),
+   money                double not null default 0,
+   praise_count         int(50) not null default 0,
+   status               varchar(16),
+   recent_login_time    datetime,
+   primary key (user_id),
+   unique key AK_uq_email (email)
+);
+
+/*==============================================================*/
+/* Table: dxtz_user_class                                       */
+/*==============================================================*/
+create table dxtz_user_class
+(
+   uc_id                varchar(32) not null,
+   user_id              varchar(32) not null,
+   class_id             varchar(32) not null,
+   primary key (uc_id)
+);
+
+alter table comment add constraint FK_answer_com foreign key (answer_id)
+      references dxtz_answer (answer_id) on delete restrict on update restrict;
+
+alter table comment add constraint FK_com_user foreign key (user_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_Submit add constraint FK_pro_wri foreign key (exercise_id)
+      references dxtz_exercise (exercise_id) on delete restrict on update restrict;
+
+alter table dxtz_Submit add constraint FK_user_wir foreign key (examinee_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_admin add constraint FK_role_admin foreign key (role_id)
+      references dxtz_role (role_id) on delete restrict on update restrict;
+
+alter table dxtz_answer add constraint FK_answer_prob foreign key (prob_id)
+      references dxtz_problem (prob_id) on delete restrict on update restrict;
+
+alter table dxtz_answer add constraint FK_answer_user foreign key (user_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_authen add constraint FK_user_teacher foreign key (user_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_bill add constraint FK_user_payee foreign key (spender_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_bill add constraint FK_user_spender foreign key (payee_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_class add constraint FK_teacher_user foreign key (teacher_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_exam add constraint FK_Reference_21 foreign key (ep_id)
+      references dxtz_exampaper (ep_id) on delete restrict on update restrict;
+
+alter table dxtz_exam add constraint FK_class_exam foreign key (class_id)
+      references dxtz_class (class_id) on delete restrict on update restrict;
+
+alter table dxtz_exampaper add constraint FK_user_paper foreign key (teacher_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_exercise add constraint FK_wirter_user foreign key (writer_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_paper_exe add constraint FK_Reference_17 foreign key (ep_id)
+      references dxtz_exampaper (ep_id) on delete restrict on update restrict;
+
+alter table dxtz_paper_exe add constraint FK_exe_paper foreign key (exercise_id)
+      references dxtz_exercise (exercise_id) on delete restrict on update restrict;
+
+alter table dxtz_problem add constraint FK_pro_user foreign key (user_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_receive add constraint FK_mess_rec foreign key (mes_id)
+      references dxtz_message (mes_id) on delete restrict on update restrict;
+
+alter table dxtz_receive add constraint FK_user_rec foreign key (user_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+
+alter table dxtz_user_class add constraint FK_class_user foreign key (class_id)
+      references dxtz_class (class_id) on delete restrict on update restrict;
+
+alter table dxtz_user_class add constraint FK_user_class foreign key (user_id)
+      references dxtz_user (user_id) on delete restrict on update restrict;
+

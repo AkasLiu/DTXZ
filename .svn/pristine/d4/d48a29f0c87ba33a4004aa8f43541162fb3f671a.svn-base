@@ -1,0 +1,19 @@
+
+
+
+
+//文档加载后初始化
+$(document).ready(function(){
+	// 清除所有选中状态
+	$('.menu dd.active').removeClass('active');
+	$('.menu dd').eq(0).addClass('active');
+
+    $('.menu dd').click(function(){
+
+        $('.menu dd').removeClass('active');
+
+        $(this).addClass('active');
+
+    });
+
+});

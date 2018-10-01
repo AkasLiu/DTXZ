@@ -1,0 +1,49 @@
+package cc.siriuscloud.dtxz.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * @author Keyblade
+ *问答页面入口 包括 用户发出提问 问题列表 问题的回答 我的问题 
+ */
+@Controller
+@RequestMapping("essay")
+public class essayController {
+
+	/**
+	 *用户发出提问
+	 *@return
+	 */
+	@RequestMapping("quiz")
+	public String quiz(){
+		return "essay_quiz";
+	}
+	
+	/**
+	 *问题的回答
+	 *@return
+	 */
+	@RequestMapping("answer")
+	public String answer(){
+		return "essay_answer";
+	}
+	
+	/**
+	 *我的问题
+	 *@return
+	 */
+	@RequestMapping("myessay")
+	public String myessay(){
+		return "essay_myessay";
+	}
+	
+	/**
+	 *问题列表
+	 *@return
+	 */
+	@RequestMapping("question")
+	public String question(){
+		return "essay_question";
+	}
+}

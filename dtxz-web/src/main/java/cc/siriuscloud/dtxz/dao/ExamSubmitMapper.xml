@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.ExamSubmitMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.ExamSubmit" >
+    <result column="exam_id" property="examId" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="begintime" property="begintime" jdbcType="TIMESTAMP" />
+    <result column="duration" property="duration" jdbcType="INTEGER" />
+    <result column="clazz_id" property="clazzId" jdbcType="VARCHAR" />
+    <result column="ep_id" property="epId" jdbcType="VARCHAR" />
+    <result column="ep_title" property="epTitle" jdbcType="VARCHAR" />
+    <result column="ep_description" property="epDescription" jdbcType="VARCHAR" />
+    <result column="teacher_id" property="teacherId" jdbcType="VARCHAR" />
+    <result column="pe_id" property="peId" jdbcType="VARCHAR" />
+    <result column="exercise_id" property="exerciseId" jdbcType="VARCHAR" />
+    <result column="ec_title" property="ecTitle" jdbcType="VARCHAR" />
+    <result column="ec_description" property="ecDescription" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="ec_writer" property="ecWriter" jdbcType="VARCHAR" />
+    <result column="submit_id" property="submitId" jdbcType="VARCHAR" />
+    <result column="examinee_id" property="examineeId" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="cc.siriuscloud.dtxz.bean.ExamSubmitWithBLOBs" extends="BaseResultMap" >
+    <result column="ec_answer" property="ecAnswer" jdbcType="LONGVARCHAR" />
+    <result column="sm_answer" property="smAnswer" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Blob_Column_List" >
+    ec_answer, sm_answer
+  </sql>
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.ExamSubmitWithBLOBs" >
+    insert into dtxz_exam_submit (exam_id, title, status, 
+      createtime, begintime, duration, 
+      clazz_id, ep_id, ep_title, 
+      ep_description, teacher_id, pe_id, 
+      exercise_id, ec_title, ec_description, 
+      type, ec_writer, submit_id, 
+      examinee_id, ec_answer, sm_answer
+      )
+    values (#{examId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{begintime,jdbcType=TIMESTAMP}, #{duration,jdbcType=INTEGER}, 
+      #{clazzId,jdbcType=VARCHAR}, #{epId,jdbcType=VARCHAR}, #{epTitle,jdbcType=VARCHAR}, 
+      #{epDescription,jdbcType=VARCHAR}, #{teacherId,jdbcType=VARCHAR}, #{peId,jdbcType=VARCHAR}, 
+      #{exerciseId,jdbcType=VARCHAR}, #{ecTitle,jdbcType=VARCHAR}, #{ecDescription,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{ecWriter,jdbcType=VARCHAR}, #{submitId,jdbcType=VARCHAR}, 
+      #{examineeId,jdbcType=VARCHAR}, #{ecAnswer,jdbcType=LONGVARCHAR}, #{smAnswer,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.ExamSubmitWithBLOBs" >
+    insert into dtxz_exam_submit
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="examId != null" >
+        exam_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="begintime != null" >
+        begintime,
+      </if>
+      <if test="duration != null" >
+        duration,
+      </if>
+      <if test="clazzId != null" >
+        clazz_id,
+      </if>
+      <if test="epId != null" >
+        ep_id,
+      </if>
+      <if test="epTitle != null" >
+        ep_title,
+      </if>
+      <if test="epDescription != null" >
+        ep_description,
+      </if>
+      <if test="teacherId != null" >
+        teacher_id,
+      </if>
+      <if test="peId != null" >
+        pe_id,
+      </if>
+      <if test="exerciseId != null" >
+        exercise_id,
+      </if>
+      <if test="ecTitle != null" >
+        ec_title,
+      </if>
+      <if test="ecDescription != null" >
+        ec_description,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="ecWriter != null" >
+        ec_writer,
+      </if>
+      <if test="submitId != null" >
+        submit_id,
+      </if>
+      <if test="examineeId != null" >
+        examinee_id,
+      </if>
+      <if test="ecAnswer != null" >
+        ec_answer,
+      </if>
+      <if test="smAnswer != null" >
+        sm_answer,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="examId != null" >
+        #{examId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="begintime != null" >
+        #{begintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="duration != null" >
+        #{duration,jdbcType=INTEGER},
+      </if>
+      <if test="clazzId != null" >
+        #{clazzId,jdbcType=VARCHAR},
+      </if>
+      <if test="epId != null" >
+        #{epId,jdbcType=VARCHAR},
+      </if>
+      <if test="epTitle != null" >
+        #{epTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="epDescription != null" >
+        #{epDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherId != null" >
+        #{teacherId,jdbcType=VARCHAR},
+      </if>
+      <if test="peId != null" >
+        #{peId,jdbcType=VARCHAR},
+      </if>
+      <if test="exerciseId != null" >
+        #{exerciseId,jdbcType=VARCHAR},
+      </if>
+      <if test="ecTitle != null" >
+        #{ecTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="ecDescription != null" >
+        #{ecDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="ecWriter != null" >
+        #{ecWriter,jdbcType=VARCHAR},
+      </if>
+      <if test="submitId != null" >
+        #{submitId,jdbcType=VARCHAR},
+      </if>
+      <if test="examineeId != null" >
+        #{examineeId,jdbcType=VARCHAR},
+      </if>
+      <if test="ecAnswer != null" >
+        #{ecAnswer,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="smAnswer != null" >
+        #{smAnswer,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

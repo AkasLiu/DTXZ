@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties"></properties>
+	
+	<!-- 设置某个包下的类，忽略包名 -->
+	<typeAliases>
+		<package name="cc.siriuscloud.bean"/>
+	</typeAliases>
+	
+	
+	<environments default="local-mysql">
+		<environment id="local-mysql">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}"/>
+				<property name="username" value="${username}"/>
+				<property name="password" value="${password}"/>
+			</dataSource>
+						
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="cc/siriuscloud/dao/empMapper.xml"/>
+	</mappers>
+	
+	
+</configuration>

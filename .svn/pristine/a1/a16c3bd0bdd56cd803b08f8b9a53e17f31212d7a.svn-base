@@ -1,0 +1,84 @@
+package cc.siriuscloud.dtxz.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("user")
+public class UserController {
+	
+	/**
+	 * 基本信息
+	 * @return
+	 */
+	@RequestMapping("baseinfo")
+	public String bashinfo(){
+		
+		return "user_baseinfo";
+	}
+	
+	/**
+	 * 验证视图
+	 * @return
+	 */
+	@RequestMapping("certificateUI")
+	public String certificateUI(){
+		
+		return "user_certificateUI";
+	}
+	
+	
+	/**
+	 * 验证
+	 * @return
+	 */
+	@RequestMapping("certificate")
+	public String certificate(){
+		
+		return "certificate";
+	}	
+	
+	/**
+	 * 班级管理
+	 * @return
+	 */
+	@RequestMapping("classmanager")
+	public String classmanager(){
+		
+		
+		return "user_classmanager";
+	}
+	
+	/**
+	 * 修改信息
+	 * @return
+	 */
+	@RequestMapping("modifyInfo")
+	public String modifyInfo(){
+		
+		return "user_modifyInfo";
+	}
+	/**
+	 * 修改信息视图
+	 * @return
+	 */
+	@RequestMapping("modifyInfoUI")
+	public String modifyInfoUI(){
+		
+		return "user_modifyinfoUI";
+	}
+	
+	
+	
+	/**
+	 * 个人中心
+	 * @return
+	 */
+	@RequestMapping("personal")
+	public String personal(){
+		
+		
+		return "user_personal";
+	}
+	
+}

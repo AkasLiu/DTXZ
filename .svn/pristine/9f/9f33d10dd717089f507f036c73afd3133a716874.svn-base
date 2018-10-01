@@ -1,0 +1,362 @@
+
+/*版心，自带清除浮动*/
+.container{
+    width: 1000px;
+    margin: 0 auto 20px;
+
+}
+.container:after{
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+}
+
+
+
+
+
+/***********************************    页头  *************************************************/
+.header{
+    background-color: #2d374b;
+    color: #fff;
+    height: 54px;
+}
+
+.header a{
+    width: 280px;
+    color: #fff;
+}
+
+.header .logo a{
+    display: block;
+}
+.header .logo a img{
+    width: 54px;
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.header .logo a span{
+    color: #2b9dd8;
+    display: inline-block;
+    font-size: 34px;
+    line-height: 54px;
+    height: 54px;
+    vertical-align: top;
+}
+
+/*导航*/
+.header .nav-list li {
+    float: left;
+}
+
+.header .nav-list li>a{
+    display: block;
+    width: 98px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 54px;
+}
+
+.header .nav-list li>a:hover{
+    font-weight: 500;
+    background-color: rgba(76, 91, 127, 0.42);
+}
+
+.header .nav-list li.active>a{
+    background-color: rgba(255,255,255,0.21);
+}
+
+
+
+/*头像*/
+.header .head-box {
+    position: relative;
+}
+
+.headimg{
+    margin: 0 auto;
+    display: block;
+    width: 50px;
+    height: 50px;
+
+    border: 2px solid #fff;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.headimg img{
+    width: 50px;
+    outline: none;
+}
+
+.head-box>ul{
+    display: none;
+    position: absolute;
+    z-index: 30;
+    left: 50%;
+    margin-left: -53px;
+
+    width: 106px;
+
+    border-top:2px solid #272b31;
+
+}
+
+
+
+
+
+.head-box:hover ul{
+    display: block;
+}
+
+.head-box>ul>li>a{
+    display: block;
+    height: 40px;
+    width: 74px;
+    padding-left: 32px;
+    color: #ccc;
+    font-size: 14px;
+    line-height: 40px;
+
+}
+
+.head-box ul li a.personal-tip{
+    background: url(../images/personal-tip.png) 5px center no-repeat #31363d;
+    background-size: 24px;
+}
+
+
+.head-box ul li a.inmail-tip {
+    background: url(../images/inmail-tip.png) 5px center no-repeat #31363d;
+    background-size: 24px;
+}
+
+.head-box ul li a.unsign-tip {
+    background: url(../images/unsign-tip.png) 5px center no-repeat #31363d;
+    background-size: 24px;
+}
+
+.head-box>ul>li>a:hover{
+    background-color: #3f4b52;
+}
+
+
+
+
+/****************************   footer  ********************************/
+.footer{
+    color: #ccc;
+    padding-top: 30px;
+    height: 158px;
+    background-color: #2d374b;
+}
+
+
+/*底部左边*/
+.footer .fl{
+
+    width: 500px;
+
+}
+
+.footer .fl h3{
+    /*color: #62afe2;*/
+    color: #2b9dd8;
+    font-size: 32px;
+
+    line-height: 56px;
+
+}
+
+.footer .fl ul.linkuls{
+    height: 32px;
+    line-height: 32px;
+
+    padding-bottom: 1px;
+}
+
+.footer .fl ul.linkuls li{
+    float: left;
+    margin-right: 10px;
+
+}
+
+.footer .fl ul.linkuls a {
+    color: #ccc;
+}
+.footer .fl ul.linkuls a:hover{
+    color: #fff;
+}
+
+
+
+
+
+/*底部右边*/
+.footer .fr{
+    padding-top: 30px;
+
+    width: 300px;
+
+}
+.footer .share dt{
+    margin-left: -20px;
+    margin-bottom: 10px;
+}
+
+.footer .share dd{
+    float: left;
+    margin-left: 10px;
+}
+
+.footer .share dd a{
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.footer .share a.wechat-tip{
+    background:url(../images/share-sprite.png) no-repeat -50px 0;
+}
+.footer .share a.qq-tip{
+    background:url(../images/share-sprite.png) no-repeat -50px -45px;
+}
+.footer .share a.sina-tip{
+    background:url(../images/share-sprite.png) no-repeat -50px -90px;
+}
+.footer .share a:hover{
+    background-position-x: 0;
+}
+
+
+
+/********************天气框*******************************/
+.weather-box{
+    height: 74px;
+
+}
+
+.weather-box img{
+    float: left;
+    padding: 5px;
+    margin-right: 10px;
+}
+.weather-box span{
+
+    font-size: 24px;
+    line-height: 46px;
+    font-weight: 800;
+
+}
+
+.weather-box p{
+
+    font-size: 14px;
+}
+
+
+
+/****个人信息****/
+.info-box {
+    padding-top: 50px;
+    padding-left: 0 !important;
+
+
+}
+.info-box .headimg{
+    margin: 0 auto;
+}
+
+.info-box a.nikename{
+
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 500;
+}
+
+.info-box .nikename i{
+    display: inline-block;
+
+    position: relative;
+    top: 2px;
+
+    width: 16px;
+    height: 16px;
+
+}
+
+.info-box .nikename .female-tip{
+    background: url(../images/icon-sex.png);
+    background-size: 16px;
+
+}
+.info-box .nikename .male-tip{
+    background: url(../images/icon-sex.png);
+    background-size: 16px;
+
+}
+
+.info-box .profile-box{
+    line-height: 28px;
+}
+
+.info-box .profile-box span{
+    display: inline-block;
+    width: 86px;
+    text-align: center;
+}
+.info-box .profile-box strong{
+    font-weight: normal;
+
+    width: 0;
+    height: 12px;
+    border:1px solid #999;
+
+
+}
+
+.info-box .mess-box {
+    background-color: #ededed;
+    height: 60px;
+    padding-top: 5px;
+
+}
+
+.mess-box>li{
+    float: left;
+}
+
+.mess-box>li p{
+    width: 70px;
+    line-height: 30px;
+    text-align: center;
+
+}
+.info-box .chengjibang{
+    padding: 20px 0 30px 0;
+}
+
+
+.info-box .chengjibang li a{
+    line-height: 32px;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.info-box .chengjibang li a span{
+    font-style: italic;
+    font-weight: 800;
+    margin-right: 10px;
+    color: #5bc0de;
+
+}
+
+
+

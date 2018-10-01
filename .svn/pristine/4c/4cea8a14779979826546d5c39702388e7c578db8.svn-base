@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.User" >
+    <id column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="job" property="job" jdbcType="VARCHAR" />
+    <result column="rank" property="rank" jdbcType="VARCHAR" />
+    <result column="img" property="img" jdbcType="VARCHAR" />
+    <result column="signature" property="signature" jdbcType="VARCHAR" />
+    <result column="money" property="money" jdbcType="DOUBLE" />
+    <result column="praise_count" property="praiseCount" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="recent_login_time" property="recentLoginTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <!-- 基本的用于注册用的必须非空 -->
+  <sql id="notnull_Column_List" >
+    user_id, nickname, email, pwd
+  </sql>
+  
+  <sql id="Base_Column_List" >
+    user_id, nickname, email, pwd, sex, name, age, job, rank, img, signature, money, 
+    praise_count, status, recent_login_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dtxz_user
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_user
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.User" >
+    insert into dtxz_user (user_id, nickname, email, 
+      pwd, sex, name, age, 
+      job, rank, img, signature, 
+      money, praise_count, status, 
+      recent_login_time)
+    values (#{userId,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{pwd,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
+      #{job,jdbcType=VARCHAR}, #{rank,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR}, #{signature,jdbcType=VARCHAR}, 
+      #{money,jdbcType=DOUBLE}, #{praiseCount,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, 
+      #{recentLoginTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.User" >
+    insert into dtxz_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="pwd != null" >
+        pwd,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="job != null" >
+        job,
+      </if>
+      <if test="rank != null" >
+        rank,
+      </if>
+      <if test="img != null" >
+        img,
+      </if>
+      <if test="signature != null" >
+        signature,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="praiseCount != null" >
+        praise_count,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="recentLoginTime != null" >
+        recent_login_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="job != null" >
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="rank != null" >
+        #{rank,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null" >
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null" >
+        #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=DOUBLE},
+      </if>
+      <if test="praiseCount != null" >
+        #{praiseCount,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="recentLoginTime != null" >
+        #{recentLoginTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.User" >
+    update dtxz_user
+    <set >
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="job != null" >
+        job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="rank != null" >
+        rank = #{rank,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null" >
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null" >
+        signature = #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=DOUBLE},
+      </if>
+      <if test="praiseCount != null" >
+        praise_count = #{praiseCount,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="recentLoginTime != null" >
+        recent_login_time = #{recentLoginTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.User" >
+    update dtxz_user
+    set nickname = #{nickname,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      job = #{job,jdbcType=VARCHAR},
+      rank = #{rank,jdbcType=VARCHAR},
+      img = #{img,jdbcType=VARCHAR},
+      signature = #{signature,jdbcType=VARCHAR},
+      money = #{money,jdbcType=DOUBLE},
+      praise_count = #{praiseCount,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR},
+      recent_login_time = #{recentLoginTime,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+  
+  
+	<select id="selectByEmailPwd" parameterType="User" resultMap="BaseResultMap">
+		select 
+		 <include refid="Base_Column_List"  />
+		from dtxz_user where email=#{email} and pwd=md5(#{pwd})
+	</select>
+	
+	<insert id="insertByUUID" parameterType="User">
+		insert into dtxz_user(user_id, nickname, email, pwd)
+		 values(replace(uuid(),'-',''),#{nickname},#{email},md5(#{pwd}));
+	</insert>
+	
+	<update id="updatePwdByPk" parameterType="User">
+		update dtxz_user set pwd=md5(#{pwd}) where user_id=#{userId}
+	</update>
+	
+	<select id="selectAll" resultMap="BaseResultMap">
+		select 
+		 <include refid="Base_Column_List"  />
+		from dtxz_user
+	</select>
+	
+	<select id="selectUserByClassId" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select u.* from dtxz_user u,dtxz_user_clazz uc
+			where u.user_id=uc.user_id  and uc.clazz_id=#{clazzId} 
+	</select>
+	
+	<select id="selectCountUserByClassId" parameterType="java.lang.String" resultType="java.lang.Long">
+		select count(0) from dtxz_user u,dtxz_user_clazz uc
+			where u.user_id=uc.user_id  and uc.clazz_id=#{clazzId} 
+	</select>
+
+	<select id="selectLikeUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select 
+		 <include refid="Base_Column_List"  />
+		from dtxz_user where nickname LIKE CONCAT(CONCAT('%',#{nickname}),'%')
+	</select>
+
+
+	<select id="selectByEmail" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select 
+		 <include refid="Base_Column_List"  />
+		from dtxz_user where email=#{email}
+	</select>
+	<select id="selectByUserIdClazzId" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select u.* from dtxz_user u,dtxz_user_clazz uc
+		where u.user_id=uc.user_id  and uc.clazz_id=
+		#{clazzId} and u.user_id='';
+	
+	</select>
+  
+</mapper>

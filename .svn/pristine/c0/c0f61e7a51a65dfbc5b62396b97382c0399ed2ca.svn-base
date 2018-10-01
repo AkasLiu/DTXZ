@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>考试记录</title>
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/historyexam.css">
+</head>
+<body>
+	<div class="exam-his-box common-box">
+		<div class="exam-his-header">
+			<i class="history-icon"></i>
+			考试记录
+		</div>
+		<div class="exam-his-content">
+			<div class="exam-his-summary">
+				<span>共考试：</span>
+				<span class="num-active" id="exam-num">3场</span>
+				<span>最高排名：</span>
+				<span class="num-active" id="exam-best-ranking">2</span>
+				<span>近一周答卷量：</span>
+				<span class="num-active" id="exam-week-num">1场</span>
+			</div>
+
+			<table class="table-box">
+				<tbody>
+					<tr>
+						<th>考试名称</th>
+						<th>考试状态</th>
+						<th>完成时间</th>
+						<th>分数</th>
+						<th>排行</th>
+					</tr>
+					<tr>
+						<td title="毛概">毛概</td>
+						<td>正在进行</td>
+						<td>2017-01-01</td>
+						<td>88</td>
+						<td>3</td>
+					</tr>
+
+					<tr>
+						<td title="新12中关于十八大的期末考试">新12中关于十八大的期末考试</td>
+						<td>已完成</td>
+						<td>2017-01-01</td>
+						<td>88</td>
+						<td>3</td>
+					</tr>
+
+					<tr>
+						<td title="计算机技能测试">计算机技能测试</td>
+						<td>已完成</td>
+						<td>2017-01-01</td>
+						<td>88</td>
+						<td>9</td>
+					</tr>
+
+					<tr>
+						<td title="毛泽东思想与邓小平理论检验">毛泽东思想与邓小平理论检验</td>
+						<td>已完成</td>
+						<td>2017-02-01</td>
+						<td>80</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td title="毛泽东思想与邓小平理论检验">毛泽东思想与邓小平理论检验</td>
+						<td>已完成</td>
+						<td>2017-02-01</td>
+						<td>80</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td title="毛泽东思想与邓小平理论检验">毛泽东思想与邓小平理论检验</td>
+						<td>已完成</td>
+						<td>2017-02-01</td>
+						<td>80</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td title="毛泽东思想与邓小平理论检验">毛泽东思想与邓小平理论检验</td>
+						<td>已完成</td>
+						<td>2017-02-01</td>
+						<td>80</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td title="毛泽东思想与邓小平理论检验">毛泽东思想与邓小平理论检验</td>
+						<td>已完成</td>
+						<td>2017-02-01</td>
+						<td>80</td>
+						<td>4</td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="" class="more-his-btn">
+				加载更多
+			</a>
+		</div>
+	</div>
+</body>
+</html>

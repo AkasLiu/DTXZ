@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心</title>
+
+
+	<!--图标-->
+	<link rel="shortcut icon " type="images/x-icon" href="./favicon.ico">
+	<!--链入基本初始化-->
+	<link rel="stylesheet" href="style/base.css">
+	<!--链入基本按钮库-->
+	<link rel="stylesheet" href="style/button.css">
+	<!--链入前台公共样式-->
+	<link rel="stylesheet" href="style/common.css">
+	<!--本页面样式-->
+	<link rel="stylesheet" href="style/user_personal.css">
+
+	<!--链入jquery-->
+	<script type="application/javascript" src="js/jquery.js"></script>
+	<script type="application/javascript" src="js/user_personal.js"></script>
+
+
+
+
+
+</head>
+<body>
+<!---------------------------    头部  ------------------------------------>
+<div class="header">
+	<div class="container">
+		<h3 class="logo fl">
+			<a href="index.html">
+				<!--<img src="images/logo.png" alt="...">-->
+				<span>大题小作</span>
+			</a>
+		</h3>
+
+		<ul class="nav-list">
+			<li><a href="./index.html">首页</a></li>
+			<li><a href="essay_question.html">问答</a></li>
+			<li><a href="exam_historyexam.html">模考</a></li>
+			<li><a href="found.html">发现</a></li>
+		</ul>
+
+		<div class="head-box fr">
+			<div class="headimg">
+				<img src="images/null-headimg.png" alt="...">
+			</div>
+			<ul>
+				<li><a class="personal-tip" href="user_personal.html">个人中心</a></li>
+				<li><a class="inmail-tip" href="./notice_show.html">查看信息</a></li>
+				<li><a class="inmail-tip" href="./finance_recharge.html">充值金币</a></li>
+				<li><a class="unsign-tip" href="./login.html">退出登录</a></li>
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div class="main container">
+		<dl class="menu fl">
+			<dt>
+				<h3>个人中心</h3>
+			</dt>
+			<dd class="active"><a href="user_baseinfo.html" target="content"> 基本资料</a></dd>
+			<dd><a href="essay_myessay.html" target="content"> 我的问题</a></dd>
+			<dd><a href="user_classmanager.html" target="content"> 班级管理</a></dd>
+			<dd><a href="exam_myexam.html" target="content"> 我的考试</a></dd>
+
+
+		</dl>
+
+		<!--右边-->
+		<iframe name="content" src="user_baseinfo.html" frameborder="0"></iframe>
+
+	</div>
+
+	<!------------------------尾部------------------------->
+	<div class="footer">
+		<div class="container">
+			<div class="fl">
+
+				<h3 >大题小作</h3>
+
+				<ul class="linkuls clearfix">
+					<li><a href="#">广告投放</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">意见反馈</a></li>
+					<li><a href="#">加入我们</a></li>
+				</ul>
+				<p>
+					Copyright © 2013-2017 dtxz Cloud. All Rights Reserved.大题小作 版权所有<br/>粤公网安备 00000000000000 粤ICP备110000000号
+				</p>
+			</div>
+
+			<div class="fr">
+				<dl class="share">
+					<dt>分享:</dt>
+					<dd><a class="wechat-tip" href="#"></a></dd>
+					<dd><a class="qq-tip" href="#"></a></dd>
+					<dd><a class="sina-tip" href="#"></a></dd>
+
+				</dl>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>

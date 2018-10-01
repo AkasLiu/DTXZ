@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.ExerciseMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.Exercise" >
+    <id column="exercise_id" property="exerciseId" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="writer_id" property="writerId" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <!-- 自定义返回集 -->
+  <!-- <resultMap id="ErrorTitleResultMap" type="cc.siriuscloud.dtxz.bean.ErrorTitle" >
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="writer_id" property="writerId" jdbcType="VARCHAR" />
+  </resultMap> -->
+  
+  <resultMap id="ResultMapWithBLOBs" type="cc.siriuscloud.dtxz.bean.Exercise" extends="BaseResultMap" >
+    <result column="answer" property="answer" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    exercise_id, title, description, type, writer_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    answer
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from dtxz_exercise
+    where exercise_id = #{exerciseId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_exercise
+    where exercise_id = #{exerciseId,jdbcType=VARCHAR}
+  </delete>
+  
+  
+  <!-- 根据考场id -->
+  <select id="selectByTv"  parameterType="cc.siriuscloud.dtxz.bean.vo.TitleVo"  resultType="cc.siriuscloud.dtxz.bean.Exercise">
+    select
+    exe.exercise_id as exerciseId, exe.title, exe.description,exe.type
+    from
+    dtxz_exam exam,
+    dtxz_exercise exe,
+    dtxz_exampaper ep,
+    dtxz_paper_exe pe 
+    where exam.exam_id=#{examId} and ep.ep_id = exam.ep_id and exe.exercise_id = pe.exercise_id and pe.ep_id = ep.ep_id
+    limit #{page},1
+  </select>
+  
+  <!-- 获取考场对应的总题目数 -->
+    <select id="getExamTitlesNum"  parameterType="cc.siriuscloud.dtxz.bean.vo.TitleVo"  resultType="java.lang.Integer">
+    select
+    count(exe.title)
+    from
+    dtxz_exam exam,
+    dtxz_exercise exe,
+    dtxz_exampaper ep,
+    dtxz_paper_exe pe 
+    where exam.exam_id=#{examId} and ep.ep_id = exam.ep_id and exe.exercise_id = pe.exercise_id and pe.ep_id = ep.ep_id
+  </select>
+  
+    <!-- 根据用户查询错题：selectByUser -->
+    <select id="selectErrorByUser" parameterType="User"  resultType="cc.siriuscloud.dtxz.bean.vo.ErrorTitleVo">
+        select exe.title, sub.submit_id  from dtxz_submit sub, dtxz_exercise exe where sub.exercise_id = 
+        exe.exercise_id
+        and sub.examinee_id = #{userId}
+        and exe.answer != sub.answer
+        
+    </select>
+
+    <!-- 根据用户Id查询错题：selectByUser -->
+    <select id="selectErrorByUserId" parameterType="java.lang.String"  resultType="cc.siriuscloud.dtxz.bean.vo.ErrorTitleVo">
+        select exe.title, sub.submit_id  from dtxz_submit sub, dtxz_exercise exe where sub.exercise_id = 
+        exe.exercise_id
+        and sub.examinee_id = #{userId}
+        and exe.answer != sub.answer
+        
+    </select>
+    
+    
+    
+    
+    
+    <!-- 根据submit_id获取错题 -->
+     <select id="selectErrorBySubmitId"  resultType="cc.siriuscloud.dtxz.bean.vo.ErrorTitleVo">
+        select exe.title, sub.answer as youAnswer, exe.answer as corAnswer, exe.description  from dtxz_submit sub, 
+        dtxz_exercise exe where sub.submit_id =#{submitId} and 
+        sub.exercise_id = exe.exercise_id
+    </select>
+  
+  <insert id="insert"  parameterType="cc.siriuscloud.dtxz.bean.Exercise">
+    insert into dtxz_exercise (exercise_id, title, description, 
+      type, writer_id, answer
+      )
+    values (  #{exerciseId,jdbcType=VARCHAR} , #{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{writerId,jdbcType=VARCHAR}, #{answer,jdbcType=LONGVARCHAR}
+      )
+     
+  </insert>
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.Exercise" >
+    insert into dtxz_exercise
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="exerciseId != null" >
+        exercise_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="writerId != null" >
+        writer_id,
+      </if>
+      <if test="answer != null" >
+        answer,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="exerciseId != null" >
+        #{exerciseId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="writerId != null" >
+        #{writerId,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null" >
+        #{answer,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.Exercise" >
+    update dtxz_exercise
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="writerId != null" >
+        writer_id = #{writerId,jdbcType=VARCHAR},
+      </if>
+      <if test="answer != null" >
+        answer = #{answer,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where exercise_id = #{exerciseId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cc.siriuscloud.dtxz.bean.Exercise" >
+    update dtxz_exercise
+    set title = #{title,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      writer_id = #{writerId,jdbcType=VARCHAR},
+      answer = #{answer,jdbcType=LONGVARCHAR}
+    where exercise_id = #{exerciseId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.Exercise" >
+    update dtxz_exercise
+    set title = #{title,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      writer_id = #{writerId,jdbcType=VARCHAR}
+    where exercise_id = #{exerciseId,jdbcType=VARCHAR}
+  </update>
+</mapper>

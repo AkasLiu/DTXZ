@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>问答</title>
+			
+		<!--图标-->
+		<link rel="shortcut icon " type="images/x-icon" href="./favicon.ico">
+	
+		<!--链入基本初始化-->
+		<link rel="stylesheet" href="style/base.css">
+		<!--链入前台公共样式-->
+	
+		<link rel="stylesheet" href="style/common.css">
+		
+		<!--问答中的样式 -->
+		<link rel="stylesheet" href="style/answer.css">
+		
+	</head>
+	<body>
+		<!--<iframe src="common/header.html" width="100%" height="100%"></iframe>-->
+		<!--    头部  -->
+		<div class="header">
+			<div class="container">
+	
+				<h3 class="logo fl">
+					<a href="#">
+						<!--<img src="images/logo.png" alt="...">-->
+						<span>大题小作</span>
+					</a>
+	
+				</h3>
+	
+				<ul class="nav-list">
+					<li><a href="#">首页</a></li>
+					<li  class="active"><a href="#">解题</a></li>
+					<li><a href="#">题库</a></li>
+					<li><a href="#">发现</a></li>
+				</ul>
+	
+				<div class="head-box fr">
+					<div class="headimg">
+						<img src="uploads/sirius.png" alt="...">
+					</div>
+					<ul>
+						<li><a class="personal-tip" href="#">个人中心</a></li>
+						<li><a class="inmail-tip" href="#">查看信息</a></li>
+						<li><a class="unsign-tip" href="#">退出登录</a></li>
+					</ul>
+	
+				</div>
+	
+			</div>
+	
+		</div>
+		
+		<!--    主体-->
+		<div class="wrap">
+			<div class="container">
+				<div class="question_left">
+					<!--    问题罗列-->
+					<section class="question_list">
+						<div class="answer null">
+							<p>0</p>
+							<span>回答</span>
+						</div>
+						<div class="summary">
+							<div class="author">
+								<a href="#">mzky</a>
+								<span>2小时前</span>
+							</div>
+							<div class="title">
+								<span><i></i>5</span>
+								<a> 无序标签不生效问题修复方法 </a>
+							</div>
+						</div>
+					</section>
+					<section class="question_list">
+						<div class="answer null">
+							<p>0</p>
+							<span>回答</span>
+						</div>
+						<div class="summary">
+							<div class="author">
+								<a href="#">mzky</a>
+								<span>2小时前</span>
+							</div>
+							<div class="title">
+								<span><i></i>5</span>
+								<a> 无序标签不生效问题修复方法 </a>
+							</div>
+						</div>
+					</section>
+					<section class="question_list">
+						<div class="answer null">
+							<p>0</p>
+							<span>回答</span>
+						</div>
+						<div class="summary">
+							<div class="author">
+								<a href="#">mzky</a>
+								<span>2小时前</span>
+							</div>
+							<div class="title">
+								<span><i></i>5</span>
+								<a> 无序标签不生效问题修复方法 </a>
+							</div>
+						</div>
+					</section>
+					<section class="question_list">
+						<div class="answer exist">
+							<p>1</p>
+							<span>回答</span>
+						</div>
+						<div class="summary">
+							<div class="author">
+								<a href="#">mzky</a>
+								<span>2小时前</span>
+							</div>
+							<div class="title">
+								<span><i></i>5</span>
+								<a> 无序标签不生效问题修复方法 </a>
+							</div>
+						</div>
+					</section>
+					<section class="question_list">
+						<div class="answer null">
+							<p>0</p>
+							<span>回答</span>
+						</div>
+						<div class="summary">
+							<div class="author">
+								<a href="#">mzky</a>
+								<span>2小时前</span>
+							</div>
+							<div class="title">
+								<span><i></i>5</span>
+								<a> 无序标签不生效问题修复方法 </a>
+							</div>
+						</div>
+					</section>
+					<section class="question_list">
+						<div class="answer null">
+							<p>0</p>
+							<span>回答</span>
+						</div>
+						<div class="summary">
+							<div class="author">
+								<a href="#">mzky</a>
+								<span>2小时前</span>
+							</div>
+							<div class="title">
+								<span><i></i>5</span>
+								<a> 无序标签不生效问题修复方法 </a>
+							</div>
+						</div>
+					</section>
+					<section class="question_list">
+						<div class="answer exist">
+							<p>3</p>
+							<span>回答</span>
+						</div>
+						<div class="summary">
+							<div class="author">
+								<a href="#">mzky</a>
+								<span>2小时前</span>
+							</div>
+							<div class="title">
+								<span><i></i>5</span>
+								<a> 无序标签不生效问题修复方法 </a>
+							</div>
+						</div>
+					</section>
+					<section class="question_list">
+						<div class="answer exist">
+							<p>3</p>
+							<span>回答</span>
+						</div>
+						<div class="summary">
+							<div class="author">
+								<a href="#">mzky</a>
+								<span>2小时前</span>
+							</div>
+							<div class="title">
+								<span><i></i>5</span>
+								<a> 无序标签不生效问题修复方法 </a>
+							</div>
+						</div>
+					</section>
+				</div>
+				
+				<div class="question_right">
+					<div class="alert">
+						<p>今天，你的学习遇到了什么问题呢？</p>
+						<a href="#">立即提问</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--尾部分页 -->
+		<div class="foot">
+			
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+
+
+
+.file-lable{
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+
+    background-color: #c9302c;
+    background: url(../images/upload-bg.png) no-repeat;
+    background-size: 60px;
+}
+
+
+.rcImg{
+    height: 175px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #999;
+    overflow: hidden;
+    position: absolute;
+    right: 52px;
+    top: 65px;
+
+}
+.rcImg img{
+    height: 100%;
+
+}
+
+#uploadInput{
+    display: none;
+
+}

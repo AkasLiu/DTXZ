@@ -1,0 +1,7 @@
+.breadcrumb{
+	height:21px;
+	padding:5px 0px;
+	margin-bottom: 20px;
+	/*background-color:red;*/
+	border: 1px solid red;
+}

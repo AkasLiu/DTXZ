@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--图标-->
+	<link rel="shortcut icon " type="images/x-icon" href="./favicon.ico">
+	<link rel="stylesheet" href="style/base.css">
+	<link rel="stylesheet" href="style/common.css">
+	<link rel="stylesheet" href="style/exam.css">
+	
+	<script src="js/jquery.js"></script>
+	<title>大题小做——考试页面</title>
+	<script>
+		$(document).ready(function() {
+			// 设置结束时间
+			var finalTime = new Date('2018-1-1 0:0:0');
+			// 	倒计时
+			timer = setInterval(function() {
+				var nowDate = new Date();
+				var timec = finalTime.getTime() - nowDate.getTime();
+				// 转化为秒
+				timec /= 1000;
+				// 判断时间是否到了
+				if (timec <= 0) {
+					clearInterval(timer);
+					$('#lasttime').text('0:0:0');
+					alert('考试结束');
+					return ;
+				}
+
+				// 时间剩余五分钟时候 标黄
+				if (timec < 300) {
+					$('#lasttime').css('color', 'rgba(200, 100, 0, 0.8)');
+				}
+
+				var sec = parseInt(timec % 60);
+				var minute = parseInt((timec % 3600)/60);
+				// 获取总共多少小时
+				var allhour = timec / (3600);
+				var hour = parseInt(allhour % 24);
+				var day = parseInt(allhour / 24);
+				var timetext = (day != 0 ? day+' 天 ' : '') +
+					(hour != 0 ? hour + ':' : '') +
+					(minute != 0 ? minute + ':' : '') +
+					sec;
+				$('#lasttime').text(timetext);
+			}, 1000);
+
+			// 展开收缩答题卡
+			$('.card-unfold').click(function() {
+				$(this).next().slideToggle();
+				if($(this).text() == '展开答题卡') {
+					$(this).html('收起答题卡<i class="hidden-icon"></i>');
+				} else {
+					$(this).html('展开答题卡');
+				}
+			});
+
+			// 设置点击选项框的时候打钩或者取消打钩
+			$('.exam-question-option').click(function(){
+				var checkbox = $(this).find('input');
+				if(checkbox.prop('checked') == false) {
+					checkbox.prop('checked', true);
+				} else {
+					checkbox.prop('checked', false);
+				}
+			});
+
+		});
+
+
+	</script>
+</head>
+<body>
+<div class="header">
+	<div class="container">
+
+		<h3 class="logo fl">
+			<a href="index.html">
+				<!--<img src="images/logo.png" alt="...">-->
+				<span>大题小作</span>
+			</a>
+		</h3>
+
+		<ul class="nav-list">
+			<li class="active"><a href="index.html">首页</a></li>
+			<li><a href="essay_question.html">问答</a></li>
+			<li><a href="exam_historyexam.html">模考</a></li>
+			<li><a href="found.html">发现</a></li>
+		</ul>
+
+		<div class="head-box fr">
+			<div class="headimg">
+				<img src="images/null-headimg.png" alt="...">
+			</div>
+			<ul>
+				<li><a class="personal-tip" href="./user_presonal.html">个人中心</a></li>
+				<li><a class="inmail-tip" href="./notice_show.html">查看信息</a></li>
+				<li><a class="inmail-tip" href="./finance_recharge.html">充值金币</a></li>
+
+				<li><a class="unsign-tip" href="./unsign.html">退出登录</a></li>
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+	<div class="exam-box">
+		<div class="exam-header">
+			<div class="process">
+				<div class="process-bar"></div>
+			</div>
+			<span>2/10</span>
+			<span class="process-time right">
+				<!-- <span class="small-info">剩余时间</span> -->
+				<span id="lasttime">0:0:0</span>
+			</span>
+		</div>
+		<div class="subject-title">
+			<i></i>[<span>多选题</span>]
+		</div>
+
+		<div class="exam-question-box">
+			<div class="exam-question-content">
+				 在 HTML 页面上包含如下所示的层对象，则 javascript 语句 document.getElementById(“info”).innerHTML 的值是（），测试一下丫丫丫丫丫丫丫
+			</div>
+			<div class="exam-question-answer">
+				<div class="exam-question-option">
+
+					<input type="checkbox" name="test" id="test1">
+					<label class="checkbox-icon" for="test1"></label>
+					<label for="test1">这是选项一</label>
+				</div>
+				<div class="exam-question-option">
+					<input type="checkbox" name="test" id="test2">
+					<label class="checkbox-icon" for="test2"></label>
+					<label for="test2">这是选项二</label>
+				</div>
+				<div class="exam-question-option">
+					<input type="checkbox" name="test" id="test3">
+					<label class="checkbox-icon" for="test3"></label>
+					<label for="test3">这是选项三</label>
+				</div>
+				<div class="exam-question-option">
+					<input type="checkbox" name="test" id="test4">
+					<label class="checkbox-icon" for="test4"></label>
+					<label for="test4">这是选项四</label>
+				</div>
+			</div>
+			
+			<div class="form-box">
+				<button class="btn btn-blue right">
+					下一题
+				</button>
+				<a href="exam_historyexam.html">
+					<button class="btn red-btn right">
+					提前交卷
+					</button>
+				</a>
+				
+			</div>
+
+			<div class="clear answer-sheet-box">
+				<span class = "card-unfold">展开答题卡</span>
+				<ul class="answer-sheet-num">
+					<li><a class="active" href="">1</a></li>
+					<li><a href="">2</a></li>
+					<li><a href="">3</a></li>
+					<li><a href="">4</a></li>
+					<li><a href="">5</a></li>
+					<li><a href="">6</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- <script>
+		var lasttime = document.getElementById('lasttime');
+		var time = 0;	// 定时，单位：秒
+		// 设置进入考场的时间
+		timer = setInterval(function() {
+			var hour = parseInt(time/3600);
+			var minute = parseInt(time/60%60);
+			var sec = parseInt(time%60);
+			var showtime = hour+':'+minute+':'+sec;
+			lasttime.innerHTML = showtime;
+			time++;
+		},1000);
+	</script> -->
+
+	<!--尾部-->
+	<div class="footer">
+		<div class="container">
+			<div class="fl">
+
+				<h3 >大题小作</h3>
+				
+				<ul class="linkuls clearfix">
+					<li><a href="#">广告投放</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">意见反馈</a></li>
+					<li><a href="#">加入我们</a></li>
+				</ul>
+				<p>
+					Copyright © 2013-2017 dtxz Cloud. All Rights Reserved.大题小作 版权所有<br/>粤公网安备 00000000000000 粤ICP备110000000号
+				</p>
+			</div>
+
+			<div class="fr">
+				<dl class="share">
+					<dt>分享:</dt>
+					<dd><a class="wechat-tip" href="#"></a></dd>
+					<dd><a class="qq-tip" href="#"></a></dd>
+					<dd><a class="sina-tip" href="#"></a></dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

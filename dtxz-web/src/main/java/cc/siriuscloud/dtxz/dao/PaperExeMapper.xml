@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.PaperExeMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.PaperExe" >
+    <id column="pe_id" property="peId" jdbcType="VARCHAR" />
+    <result column="ep_id" property="epId" jdbcType="VARCHAR" />
+    <result column="exercise_id" property="exerciseId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    pe_id, ep_id, exercise_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dtxz_paper_exe
+    where pe_id = #{peId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_paper_exe
+    where pe_id = #{peId,jdbcType=VARCHAR}
+  </delete>
+  
+  <insert id="insert"  parameterType="cc.siriuscloud.dtxz.bean.PaperExe" >
+    insert into dtxz_paper_exe (pe_id, ep_id, exercise_id
+      )
+    values (replace(uuid(), '-', '') , #{epId,jdbcType=VARCHAR}, #{exerciseId,jdbcType=VARCHAR}
+      )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.PaperExe" >
+    insert into dtxz_paper_exe
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="peId != null" >
+        pe_id,
+      </if>
+      <if test="epId != null" >
+        ep_id,
+      </if>
+      <if test="exerciseId != null" >
+        exercise_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="peId != null" >
+        #{peId,jdbcType=VARCHAR},
+      </if>
+      <if test="epId != null" >
+        #{epId,jdbcType=VARCHAR},
+      </if>
+      <if test="exerciseId != null" >
+        #{exerciseId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.PaperExe" >
+    update dtxz_paper_exe
+    <set >
+      <if test="epId != null" >
+        ep_id = #{epId,jdbcType=VARCHAR},
+      </if>
+      <if test="exerciseId != null" >
+        exercise_id = #{exerciseId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where pe_id = #{peId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.PaperExe" >
+    update dtxz_paper_exe
+    set ep_id = #{epId,jdbcType=VARCHAR},
+      exercise_id = #{exerciseId,jdbcType=VARCHAR}
+    where pe_id = #{peId,jdbcType=VARCHAR}
+  </update>
+</mapper>

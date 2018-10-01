@@ -1,0 +1,124 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background-color: #EEE;
+}
+
+a{
+	text-decoration: none;
+}
+
+.box{
+	width: 800px;
+	margin: 100px auto;
+	overflow: hidden;
+	border-radius: 5px;
+	background-color: #FFF;
+}
+
+.box-content{
+	width: 760px;
+	margin: 10px 20px;
+}
+
+.box-content ul{
+	list-style: none;
+	overflow: hidden;
+}
+
+.box-content ul li{
+	width: 760px;
+	height: 50px;
+	padding: 10px 0;
+	overflow: hidden;
+	border-bottom: 1px solid #999;
+}
+
+.box-content ul li .li-content{
+	width: 760px;
+	height: 50px;	
+	overflow: hidden;
+}
+
+.box-content ul li .li-content img{
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+
+.box-content ul li .li-content .essay-contain{
+	float: left;
+	width: 705px;
+	margin-top: 5px;
+	margin-left: 5px;
+	overflow: hidden;
+}
+
+.essay-contain .essay-title{
+	width: 705px;
+}
+
+.essay-contain .essay-title a{
+	height: 20px;
+	font-size: 14px;
+	/*color: black;*/
+	overflow: hidden;
+}
+
+.essay-contain .essay-foot{
+	width: 705px;
+	height: 20px;
+	margin-top: 5px;
+	font-size: 13px;
+	color:#999;
+}
+
+.essay-foot .eassay-foot-left{
+	float: left;
+	width: 450px;
+	line-height: 20px;
+}
+
+.eassay-foot-left label{
+	float: left;
+	width: 60px;
+	height: 20px;
+}
+
+.eassay-foot-left span{
+	float: left;
+	width: 85px;
+	height: 20px;
+}
+
+.essay-foot .eassay-foot-right{
+	float: right;
+	width: 160px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+}
+
+.eassay-foot-right label{
+	float: left;
+	width: 30px;
+	height: 20px;
+	text-align: right;
+}
+
+.eassay-foot-right span{
+	float:left;
+	width: 40px;
+	height: 20px;
+	margin-left: 5px;
+	text-align: left;
+}
+
+.eassay-foot-right  p{
+	float: left;
+	width: 2px;
+	height: 20px;
+}

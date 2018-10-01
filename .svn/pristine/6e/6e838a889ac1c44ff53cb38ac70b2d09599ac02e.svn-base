@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<link rel="stylesheet" href="style/base.css" />
+		<link rel="stylesheet" href="style/common.css" />
+
+
+
+		<link rel="stylesheet" href="style/notice_show.css" />
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		
+	</head>
+	<body>
+
+
+	<div class="header">
+		<div class="container">
+
+			<h3 class="logo fl">
+				<a href="index.html">
+					<!--<img src="images/logo.png" alt="...">-->
+					<span>大题小作</span>
+				</a>
+			</h3>
+
+			<ul class="nav-list">
+				<li class="active"><a href="index.html">首页</a></li>
+				<li><a href="essay_question.html">问答</a></li>
+				<li><a href="exam_historyexam.html">模考</a></li>
+				<li><a href="found.html">发现</a></li>
+			</ul>
+
+			<div class="head-box fr">
+				<div class="headimg">
+					<img src="images/null-headimg.png" alt="...">
+				</div>
+				<ul>
+					<li><a class="personal-tip" href="user_personal.html">个人中心</a></li>
+					<li><a class="inmail-tip" href="./notice_show.html">查看信息</a></li>
+					<li><a class="inmail-tip" href="./finance_recharge.html">充值金币</a></li>
+
+					<li><a class="unsign-tip" href="./unsign.html">退出登录</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+
+		<div class = "news_box">			
+			<div class = "news_contain">
+				<div class = "title">
+					<span><img src="images/news-img.png"/>通知</span>
+
+					<form action="javascript:void(0);" method="post" class = "searchform">
+						<button class = "search" type="submit"></button>
+						<input type="text" placeholder="搜索..." name = "search"/>
+					</form>
+				</div>
+				<ul>				
+					<li>
+						<a class = "list-head" href = "javascript:void(0);">
+							<img alt = "头像" src = "images/news.png"/>
+						</a>
+						<div class = "tooltip">
+							<div class = "tooltip_arrow"></div>
+							<div class = "tooltip_inner">
+								<div class = "chat-title">
+									恭喜你！注册成功！ ---1
+								</div>
+								<div class = "letter-info">
+									<p class = "letter-time">今天 18:22</p>
+									<p class = "delete-letter"><a href = "javascript:void(0);" class = "delete">删除</a><p>
+								</div>
+							</div>
+						</div>
+						
+						<div class = "chat-contain">
+							<p class = "contain-p">
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+							</p>
+						</div>
+						
+					</li>
+					<li>
+						<a class = "list-head" href = "javascript:void(0);">
+							<img alt = "头像" src = "images/news.png"/>
+						</a>
+						<div class = "tooltip">
+							<div class = "tooltip_arrow"></div>
+							<div class = "tooltip_inner">
+								<div class = "chat-title">
+									恭喜你！注册成功！ ---2
+								</div>
+								<div class = "letter-info">
+									<p class = "letter-time">今天 18:22</p>
+									<p class = "delete-letter"><a href = "javascript:void(0);" class = "delete">删除</a><p>
+								</div>
+							</div>
+						</div>
+						
+						<div class = "chat-contain">
+							<p class = "contain-p">
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+							</p>
+						</div>
+						
+					</li>		
+					<li>
+						<a class = "list-head" href = "javascript:void(0);">
+							<img alt = "头像" src = "images/news.png"/>
+						</a>
+						<div class = "tooltip">
+							<div class = "tooltip_arrow"></div>
+							<div class = "tooltip_inner">
+								<div class = "chat-title">
+									恭喜你！注册成功！ ---3
+								</div>
+								<div class = "letter-info">
+									<p class = "letter-time">今天 18:22</p>
+									<p class = "delete-letter"><a href = "javascript:void(0);" class = "delete">删除</a><p>
+								</div>
+							</div>
+						</div>
+						
+						<div class = "chat-contain">
+							<p class = "contain-p">
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+							</p>
+						</div>
+						
+					</li>	
+					<li>
+						<a class = "list-head" href = "javascript:void(0);">
+							<img alt = "头像" src = "images/news.png"/>
+						</a>
+						<div class = "tooltip">
+							<div class = "tooltip_arrow"></div>
+							<div class = "tooltip_inner">
+								<div class = "chat-title">
+									恭喜你！注册成功！ ---4
+								</div>
+								<div class = "letter-info">
+									<p class = "letter-time">今天 18:22</p>
+									<p class = "delete-letter"><a href = "javascript:void(0);" class = "delete">删除</a><p>
+								</div>
+							</div>
+						</div>
+						
+						<div class = "chat-contain">
+							<p class = "contain-p">
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+								尊敬的XXX用户，恭喜你注册成功！<br/>
+							</p>
+						</div>
+						
+					</li>	
+				</ul>	
+			</div>
+			
+		</div>
+		<script type="text/javascript" src="js/notice_show.js" ></script>
+
+	<!------------------------尾部------------------------->
+	<div class="footer">
+		<div class="container">
+			<div class="fl">
+
+				<h3 >大题小作</h3>
+
+				<ul class="linkuls clearfix">
+					<li><a href="#">广告投放</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">意见反馈</a></li>
+					<li><a href="#">加入我们</a></li>
+				</ul>
+
+				<p>Copyright © 2013-2017 dtxz Cloud. All Rights Reserved.大题小作 版权所有 <br/>
+					粤公网安备 00000000000000 粤ICP备110000000号
+				</p>
+			</div>
+
+			<div class="fr">
+				<dl class="share">
+					<dt>分享:</dt>
+					<dd><a class="wechat-tip" href="#"></a></dd>
+					<dd><a class="qq-tip" href="#"></a></dd>
+					<dd><a class="sina-tip" href="#"></a></dd>
+				</dl>
+
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

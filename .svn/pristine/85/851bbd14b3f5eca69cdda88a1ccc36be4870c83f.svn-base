@@ -1,0 +1,17 @@
+package cc.siriuscloud.dtxz.dao;
+
+import cc.siriuscloud.dtxz.bean.Pv;
+
+public interface PvMapper {
+    int deleteByPrimaryKey(String pvId);
+
+    int insert(Pv record);
+
+    int insertSelective(Pv record);
+
+    Pv selectByPrimaryKey(String pvId);
+
+    int updateByPrimaryKeySelective(Pv record);
+
+    int updateByPrimaryKey(Pv record);
+}

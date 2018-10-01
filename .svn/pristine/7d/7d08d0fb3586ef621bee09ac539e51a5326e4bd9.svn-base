@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cc.siriuscloud.dtxz.dao.ExampaperMapper" >
+  <resultMap id="BaseResultMap" type="cc.siriuscloud.dtxz.bean.Exampaper" >
+    <id column="ep_id" property="epId" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="teacher_id" property="teacherId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ep_id, title, description, teacher_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dtxz_exampaper
+    where ep_id = #{epId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dtxz_exampaper
+    where ep_id = #{epId,jdbcType=VARCHAR}
+  </delete>
+  
+  <!--  -->
+  <insert id="insert" parameterType="cc.siriuscloud.dtxz.bean.Exampaper" >
+    insert into dtxz_exampaper (ep_id, title, description, 
+      teacher_id)
+    values (#{epId ,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{teacherId,jdbcType=VARCHAR})
+
+     
+  </insert>
+  
+  <!-- 查询创建的考卷 -->
+  <select id="selectByWriter"  resultType="cc.siriuscloud.dtxz.bean.Exampaper">
+  select 
+  ep.ep_id as epId, ep.title
+  from
+  dtxz_user user,
+  dtxz_exampaper ep
+  where
+  user.user_id = ep.teacher_id and user.user_id = #{userId}
+  </select>
+  
+  
+  <insert id="insertSelective" parameterType="cc.siriuscloud.dtxz.bean.Exampaper" >
+    insert into dtxz_exampaper
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="epId != null" >
+        ep_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="teacherId != null" >
+        teacher_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="epId != null" >
+        #{epId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherId != null" >
+        #{teacherId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.siriuscloud.dtxz.bean.Exampaper" >
+    update dtxz_exampaper
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherId != null" >
+        teacher_id = #{teacherId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ep_id = #{epId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.siriuscloud.dtxz.bean.Exampaper" >
+    update dtxz_exampaper
+    set title = #{title,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      teacher_id = #{teacherId,jdbcType=VARCHAR}
+    where ep_id = #{epId,jdbcType=VARCHAR}
+  </update>
+</mapper>

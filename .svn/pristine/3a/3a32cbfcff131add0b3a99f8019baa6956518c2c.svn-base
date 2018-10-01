@@ -1,0 +1,51 @@
+
+
+var tss=document.getElementsByClassName('clock');
+
+setInterval(function() {
+    for(var i=0;i<tss.length;++i){
+
+        var day=msToDay(tss[i].getAttribute('date'));
+
+        tss[i].innerHTML=day.day+'天'+day.hour+':'+day.minute+':'+day.second;
+    }
+
+},1000);
+
+
+
+//将毫秒差转为日期差
+/*
+    endDate:    2017-10-22 10:10:00
+ */
+function msToDay(endDate){
+
+    var endTime=new Date(endDate);
+    var nowTime=new Date();
+
+    var slaveTime=endTime-nowTime;
+
+    var ms=slaveTime%1000;
+
+    var ts=Math.floor(slaveTime/1000);//总秒数
+
+    var sec=ts%60;
+    var tm=Math.floor(ts/60);//总分钟
+    var min=tm%60;
+    var td=Math.floor(tm/60);//总小时
+
+    var hour=td%24;
+    var day=Math.floor(td/24);//总天
+
+    return {
+        ms:(ms<10)?'0'+ms:''+ms,
+        second:(sec<10)?'0'+sec:''+sec,
+        minute:(min<10)?'0'+min:''+min,
+        hour:(hour<10)?'0'+hour:''+hour,
+        day:(day<10)?'+'+day:''+day
+    }
+
+}
+
+
+
